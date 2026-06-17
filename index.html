@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Мектепке дейінгі педагогика | 3-сайт</title>
+
+  <style>
+    :root{
+      --bg:#f6efe7;
+      --paper:#fffaf2;
+      --card:#ffffff;
+      --ink:#2b241d;
+      --muted:#756657;
+      --line:rgba(75,50,30,.14);
+      --accent:#9d6637;
+      --accent2:#6f8f5c;
+      --accent3:#b85d4b;
+      --soft:#fff0d8;
+      --green:#4f8b62;
+      --red:#b64b3e;
+      --shadow:0 22px 58px rgba(64,42,23,.13);
+      --radius:28px;
+      --radius2:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter, "Segoe UI", Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 5%, rgba(157,102,55,.18), transparent 30%),
+        radial-gradient(circle at 92% 8%, rgba(111,143,92,.18), transparent 28%),
+        linear-gradient(180deg,#fbf6ef 0%,#f6efe7 54%,#eee2d4 100%);
+      line-height:1.65;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .wrap{
+      width:min(1180px, calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .top{
+      padding:18px 0 8px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:12px 14px 12px 18px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.68);
+      backdrop-filter:blur(16px);
+      box-shadow:0 12px 34px rgba(70,48,28,.08);
+    }
+
+    .brand-left{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      font-weight:950;
+      letter-spacing:-.02em;
+    }
+
+    .logo{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#fff;
+      box-shadow:0 12px 22px rgba(157,102,55,.24);
+      font-weight:950;
+    }
+
+    .brand-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .tag{
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff7ea;
+      color:#775f45;
+      font-size:13px;
+      font-weight:850;
+      white-space:nowrap;
+    }
+
+    .hero{
+      margin:18px 0 24px;
+      padding:clamp(28px,4.8vw,58px);
+      border:1px solid var(--line);
+      border-radius:34px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.91),rgba(255,246,232,.94)),
+        url("data:image/svg+xml,%3Csvg width='140' height='140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%239d6637' stroke-opacity='.11' stroke-width='1'%3E%3Cpath d='M20 20h100v100H20z'/%3E%3Cpath d='M45 20v100M70 20v100M95 20v100M20 45h100M20 70h100M20 95h100'/%3E%3C/g%3E%3C/svg%3E");
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      right:-100px;
+      top:-100px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(111,143,92,.25),transparent 68%);
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      left:-90px;
+      bottom:-90px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(184,93,75,.16),transparent 68%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#eef6e8;
+      color:#527b45;
+      font-size:13px;
+      font-weight:950;
+      margin-bottom:16px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(33px,5.2vw,61px);
+      line-height:1.04;
+      letter-spacing:-.06em;
+      color:#2a2118;
+    }
+
+    .hero p{
+      margin:18px 0 0;
+      max-width:780px;
+      color:var(--muted);
+      font-size:clamp(16px,2vw,19px);
+    }
+
+    .hero-panel{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.78);
+      padding:18px;
+      box-shadow:0 18px 46px rgba(70,48,28,.1);
+    }
+
+    .stat{
+      display:grid;
+      grid-template-columns:58px 1fr;
+      gap:13px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+      align-items:center;
+    }
+
+    .stat:last-child{border-bottom:0}
+
+    .stat-num{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:#fff0d6;
+      color:var(--accent);
+      font-weight:950;
+      font-size:22px;
+    }
+
+    .stat strong{
+      display:block;
+      line-height:1.25;
+      font-size:15px;
+    }
+
+    .stat span{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      line-height:1.35;
+      font-size:13px;
+    }
+
+    .section{
+      margin:26px 0;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:18px;
+      margin-bottom:16px;
+    }
+
+    .section-title{
+      margin:0;
+      font-size:clamp(25px,3vw,37px);
+      line-height:1.1;
+      letter-spacing:-.04em;
+    }
+
+    .section-subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      max-width:780px;
+    }
+
+    .book-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .book-card{
+      min-height:265px;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.86);
+      box-shadow:0 16px 44px rgba(70,48,28,.08);
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:.25s ease;
+    }
+
+    .book-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 28px 70px rgba(70,48,28,.15);
+      border-color:rgba(157,102,55,.36);
+    }
+
+    .book-card:before{
+      content:"";
+      position:absolute;
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      right:-64px;
+      top:-64px;
+      background:rgba(157,102,55,.14);
+    }
+
+    .book-card:nth-child(2):before{
+      background:rgba(111,143,92,.16);
+    }
+
+    .book-card:nth-child(3):before{
+      background:rgba(184,93,75,.14);
+    }
+
+    .badge{
+      display:inline-flex;
+      width:fit-content;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f4e6d3;
+      color:#84582f;
+      font-size:12px;
+      font-weight:950;
+      margin-bottom:14px;
+    }
+
+    .book-card h3{
+      margin:0 0 12px;
+      font-size:22px;
+      line-height:1.16;
+      letter-spacing:-.025em;
+      position:relative;
+      z-index:1;
+    }
+
+    .book-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14.3px;
+      position:relative;
+      z-index:1;
+    }
+
+    .book-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      color:var(--accent);
+      font-weight:950;
+      font-size:14px;
+      margin-top:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .arrow{
+      width:35px;
+      height:35px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#fff0d6;
+      color:var(--accent);
+    }
+
+    .book-section{
+      scroll-margin-top:18px;
+      margin:34px 0;
+    }
+
+    .book-title-card{
+      padding:clamp(24px,4vw,42px);
+      border:1px solid var(--line);
+      border-radius:34px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,247,235,.9));
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+
+    .book-title-card h2{
+      margin:0;
+      font-size:clamp(28px,4vw,48px);
+      line-height:1.08;
+      letter-spacing:-.05em;
+    }
+
+    .book-title-card p{
+      margin:14px 0 0;
+      max-width:920px;
+      color:var(--muted);
+      font-size:16.5px;
+    }
+
+    .card{
+      margin-bottom:18px;
+      padding:clamp(20px,3vw,32px);
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:rgba(255,255,255,.82);
+      box-shadow:0 18px 46px rgba(70,48,28,.08);
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:24px;
+      line-height:1.2;
+      letter-spacing:-.025em;
+    }
+
+    .card h4{
+      margin:20px 0 8px;
+      font-size:18px;
+    }
+
+    .card p{
+      margin:10px 0;
+      color:#55473a;
+    }
+
+    .lead{
+      font-size:17px;
+      color:var(--muted);
+      max-width:920px;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .info{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff8ee;
+    }
+
+    .info strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .info span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.42;
+    }
+
+    .list{
+      display:grid;
+      gap:10px;
+      margin:14px 0;
+    }
+
+    .list-item{
+      display:grid;
+      grid-template-columns:34px 1fr;
+      gap:10px;
+      align-items:start;
+      padding:13px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff8ee;
+    }
+
+    .num{
+      width:32px;
+      height:32px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:#edf6e8;
+      color:#527b45;
+      font-weight:950;
+      font-size:13px;
+    }
+
+    .list-item strong{
+      display:block;
+      margin-bottom:3px;
+    }
+
+    .list-item span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .term-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .term{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff8ee;
+    }
+
+    .term strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .term span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .test-box{
+      margin-top:18px;
+      padding:18px;
+      border:1px solid rgba(157,102,55,.22);
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,248,238,.94),rgba(255,255,255,.76));
+    }
+
+    .question{
+      margin-bottom:14px;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.9);
+    }
+
+    .q-title{
+      margin-bottom:12px;
+      color:#2b241d;
+      font-weight:950;
+    }
+
+    .options{
+      display:grid;
+      gap:8px;
+    }
+
+    .option{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:10px 11px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fffaf2;
+      color:#4c3d30;
+      cursor:pointer;
+      font-size:14.5px;
+      transition:.18s ease;
+    }
+
+    .option:hover{
+      border-color:rgba(157,102,55,.42);
+      background:#fff0d6;
+    }
+
+    .option input{
+      margin-top:4px;
+      accent-color:var(--accent);
+    }
+
+    .explanation{
+      display:none;
+      margin-top:12px;
+      padding:12px 13px;
+      border-radius:14px;
+      background:#edf6e8;
+      color:#42633b;
+      font-size:14px;
+    }
+
+    .question.checked .explanation{display:block}
+
+    .question.correct{
+      border-color:rgba(79,139,98,.45);
+      background:rgba(237,246,232,.56);
+    }
+
+    .question.wrong{
+      border-color:rgba(182,75,62,.42);
+      background:rgba(255,237,232,.58);
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .btn{
+      border:0;
+      border-radius:999px;
+      padding:12px 18px;
+      font-family:inherit;
+      font-weight:950;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--accent),#8d552b);
+      color:white;
+      box-shadow:0 12px 28px rgba(141,85,43,.22);
+    }
+
+    .btn.secondary{
+      color:#85572e;
+      background:#fff0d6;
+      border:1px solid rgba(157,102,55,.22);
+      box-shadow:none;
+    }
+
+    .score{
+      display:none;
+      margin-top:12px;
+      padding:12px 14px;
+      border-radius:16px;
+      background:#fff0d6;
+      color:#694525;
+      font-weight:950;
+    }
+
+    .copyright{
+      margin-top:18px;
+      padding:15px 17px;
+      border-radius:18px;
+      background:#fff0d6;
+      color:#5d4329;
+      border:1px solid rgba(157,102,55,.22);
+    }
+
+    @media(max-width:980px){
+      .hero-inner{
+        grid-template-columns:1fr;
+      }
+
+      .book-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:680px){
+      .wrap{
+        width:min(100% - 18px,1180px);
+      }
+
+      .brand{
+        border-radius:22px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .brand-tags{
+        justify-content:flex-start;
+      }
+
+      .hero{
+        padding:24px 18px;
+        border-radius:26px;
+      }
+
+      .info-grid,
+      .term-grid{
+        grid-template-columns:1fr;
+      }
+
+      .card{
+        padding:18px;
+        border-radius:22px;
+      }
+
+      .book-card{
+        min-height:auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="brand-left">
+          <div class="logo">КТ</div>
+          <div>Мектепке дейінгі педагогика</div>
+        </div>
+
+        <div class="brand-tags">
+          <span class="tag">3-сайт</span>
+          <span class="tag">3 кітап</span>
+          <span class="tag">5 нұсқа · 1 жауап</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">📚 Жалпы мектепке дейінгі педагогика теориясы</div>
+          <h1>Мектепке дейінгі педагогика бойынша толық дайындық</h1>
+          <p>
+            Бұл сайт үш негізгі оқу құралындағы мектепке дейінгі педагогика теориясын жүйелі меңгеруге арналған:
+            педагогика ғылымының негіздері, мектеп жасына дейінгі баланың дамуы, тәрбие бағыттары,
+            оқыту, ойын, заттық-дамытушы орта, мектепке дайындық және отбасы ынтымақтастығы.
+          </p>
+        </div>
+
+        <div class="hero-panel">
+          <div class="stat">
+            <div class="stat-num">1</div>
+            <div>
+              <strong>Жұмабекова Ф.Н.</strong>
+              <span>Мектепке дейінгі педагогика</span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div>
+              <strong>Андабекова С.</strong>
+              <span>Мектепке дейінгі педагогика</span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div>
+              <strong>Жиенбаева С.Н. және авторлар</strong>
+              <span>Мектепке дейінгі педагогика</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="books">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Кітаптар</h2>
+          <p class="section-subtitle">
+            Карточканы бассаңыз, сол кітап бөліміне өтесіз. Барлық кітаптар бір бетте төмен қарай ретімен орналасқан.
+          </p>
+        </div>
+      </div>
+
+      <div class="book-grid">
+        <a class="book-card" href="#book-zhumabekova">
+          <div>
+            <span class="badge">1-кітап</span>
+            <h3>Жұмабекова Ф.Н. “Мектепке дейінгі педагогика”</h3>
+            <p>
+              Мектепке дейінгі педагогиканың ғылыми негіздері, баланың дамуы,
+              тәрбие мазмұны, оқыту, ойын және педагогикалық процестің теориялық жүйесі.
+            </p>
+          </div>
+          <div class="book-bottom">
+            <span>Бөлімге өту</span>
+            <span class="arrow">↓</span>
+          </div>
+        </a>
+
+        <a class="book-card" href="#book-andabekova">
+          <div>
+            <span class="badge">2-кітап</span>
+            <h3>Андабекова С. “Мектепке дейінгі педагогика”</h3>
+            <p>
+              Мектеп жасына дейінгі балаларды тәрбиелеу мен оқыту теориясы,
+              мазмұны, міндеттері, ұстанымдары, әдістері және педагогикалық жағдаяттар.
+            </p>
+          </div>
+          <div class="book-bottom">
+            <span>Бөлімге өту</span>
+            <span class="arrow">↓</span>
+          </div>
+        </a>
+
+        <a class="book-card" href="#book-zhienbaeva">
+          <div>
+            <span class="badge">3-кітап</span>
+            <h3>Жиенбаева С.Н. және авторлар “Мектепке дейінгі педагогика”</h3>
+            <p>
+              Мектепке дейінгі педагогика ғылым ретінде, тәрбие бағыттары,
+              дидактика, ойын, орта, отбасы және мектепке дейінгі ұйымдағы жұмыс.
+            </p>
+          </div>
+          <div class="book-bottom">
+            <span>Бөлімге өту</span>
+            <span class="arrow">↓</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <main>
+      <section class="book-section" id="book-zhumabekova">
+        <div class="book-title-card">
+          <h2>1-кітап. Жұмабекова Ф.Н. “Мектепке дейінгі педагогика”</h2>
+          <p>
+            Бұл бөлім мектепке дейінгі педагогиканың теориялық негіздерін, мектеп жасына дейінгі баланың
+            тұлғалық дамуын, тәрбие мен оқытудың мазмұнын, педагогикалық процесті ұйымдастыруды және
+            негізгі педагогикалық ұғымдарды қамтиды.
+          </p>
+
+          <div class="info-grid">
+            <div class="info">
+              <strong>Кітап бағыты</strong>
+              <span>Мектепке дейінгі педагогиканың жалпы теориясы</span>
+            </div>
+            <div class="info">
+              <strong>Негізгі мазмұн</strong>
+              <span>Ғылым, бала дамуы, тәрбие, оқыту, ойын, орта, отбасы</span>
+            </div>
+            <div class="info">
+              <strong>Дайындық форматы</strong>
+              <span>Теория, ұғымдар, тақырыптық тест тапсырмалары</span>
+            </div>
+          </div>
+        </div>
+
+        <article class="card">
+          <h3>Қысқаша теория</h3>
+
+          <div class="list">
+            <div class="list-item">
+              <div class="num">1</div>
+              <div>
+                <strong>Мектепке дейінгі педагогика ғылым ретінде</strong>
+                <span>Мектеп жасына дейінгі балаларды тәрбиелеу, оқыту және дамыту заңдылықтарын зерттейтін педагогика саласы.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">2</div>
+              <div>
+                <strong>Педагогиканың пәні</strong>
+                <span>Мектепке дейінгі кезеңдегі баланың дамуына бағытталған тәрбие мен оқыту процесінің мазмұны, мақсаты, әдістері және ұйымдастыру формалары.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">3</div>
+              <div>
+                <strong>Баланың дамуы</strong>
+                <span>Мектеп жасына дейінгі кезеңде тұлғаның дене, ақыл-ой, адамгершілік, эстетикалық, еңбек, әлеуметтік және эмоциялық сапалары қалыптасады.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">4</div>
+              <div>
+                <strong>Тәрбие мазмұны</strong>
+                <span>Бала тұлғасын жан-жақты дамытуға бағытталған дене, ақыл-ой, адамгершілік, эстетикалық, еңбек, экологиялық және әлеуметтік тәрбие бағыттары.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">5</div>
+              <div>
+                <strong>Оқыту</strong>
+                <span>Баланың танымдық белсенділігін, білімін, дағдысын, ойлауын және қоршаған ортамен әрекеттесуін қалыптастыратын педагогикалық процесс.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">6</div>
+              <div>
+                <strong>Ойын</strong>
+                <span>Мектеп жасына дейінгі баланың жетекші іс-әрекеті, оның қарым-қатынасы, қиялы, ойлауы, мінез-құлқы және әлеуметтік тәжірибесі ойын арқылы дамиды.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Негізгі ұғымдар</h3>
+
+          <div class="term-grid">
+            <div class="term">
+              <strong>Мектепке дейінгі педагогика</strong>
+              <span>Мектеп жасына дейінгі балаларды тәрбиелеу, оқыту және дамыту заңдылықтарын зерттейтін ғылым саласы.</span>
+            </div>
+
+            <div class="term">
+              <strong>Тәрбие</strong>
+              <span>Баланың тұлғалық қасиеттерін, мінез-құлқын, құндылықтарын және әлеуметтік тәжірибесін қалыптастыруға бағытталған педагогикалық процесс.</span>
+            </div>
+
+            <div class="term">
+              <strong>Оқыту</strong>
+              <span>Баланың білім, білік, дағды, танымдық қызығушылық және ойлау әрекетін қалыптастыру процесі.</span>
+            </div>
+
+            <div class="term">
+              <strong>Даму</strong>
+              <span>Баланың дене, психикалық, әлеуметтік, эмоциялық және танымдық сапаларының өзгеруі мен жетілуі.</span>
+            </div>
+
+            <div class="term">
+              <strong>Педагогикалық процесс</strong>
+              <span>Тәрбие, оқыту, дамыту және әлеуметтендіру міндеттерін біріктіретін мақсатты ұйымдастырылған жүйе.</span>
+            </div>
+
+            <div class="term">
+              <strong>Жетекші іс-әрекет</strong>
+              <span>Белгілі жас кезеңінде баланың негізгі психикалық және тұлғалық дамуына ерекше ықпал ететін әрекет түрі.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Жұмабекова бойынша тест</h3>
+          <div class="test-box" data-test="testZhumabekova">
+                        <div class="question" data-answer="B">
+              <div class="q-title">1. Мектепке дейінгі педагогиканың ғылым ретіндегі пәні қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_1" value="A"> Балалардың мектепке қабылданғаннан кейінгі оқу жетістіктерін бағалау жүйесі</label>
+                <label class="option"><input type="radio" name="qz_1" value="B"> Мектеп жасына дейінгі балаларды тәрбиелеу, оқыту және дамыту процесінің заңдылықтары</label>
+                <label class="option"><input type="radio" name="qz_1" value="C"> Бастауыш мектептегі пәндік оқытудың мазмұны мен әдістері</label>
+                <label class="option"><input type="radio" name="qz_1" value="D"> Жасөспірімдердің әлеуметтік мінез-құлқын қалыптастыру тәсілдері</label>
+                <label class="option"><input type="radio" name="qz_1" value="E"> Педагогтердің кәсіби біліктілігін бағалау және аттестаттау тәртібі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Мектепке дейінгі педагогика мектеп жасына дейінгі балаларды тәрбиелеу, оқыту және дамыту заңдылықтарын зерттейді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">2. Мектепке дейінгі педагогиканың негізгі міндеті қай мазмұнмен сипатталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_2" value="A"> Балаларды бастауыш мектеп пәндерін толық меңгеруге бағыттау</label>
+                <label class="option"><input type="radio" name="qz_2" value="B"> Балалардың оқу нәтижесін бірдей өлшеммен салыстыру</label>
+                <label class="option"><input type="radio" name="qz_2" value="C"> Топтағы тәртіпті күшейтіп, дербес әрекетті шектеу</label>
+                <label class="option"><input type="radio" name="qz_2" value="D"> Баланың жан-жақты дамуына жағдай жасап, тәрбиелеу мен оқыту мазмұнын ғылыми негіздеу</label>
+                <label class="option"><input type="radio" name="qz_2" value="E"> Сабақ кестесін мектеп форматына жақындату</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Бұл ғылым баланың жан-жақты дамуына жағдай жасап, мектепке дейінгі тәрбие мен оқыту мазмұнын ғылыми негіздейді.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">3. Мектепке дейінгі кезең педагогикада неге ерекше маңызды деп қарастырылады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_3" value="A"> Тұлғаның негізгі қасиеттері, мінез-құлық негіздері, қарым-қатынас және танымдық белсенділік қалыптасатын кезең болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_3" value="B"> Баланың пәндік білімді толық меңгеретін негізгі оқу кезеңі болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_3" value="C"> Балалардың оқу үлгерімін салыстыруға қолайлы кезең болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_3" value="D"> Мектептегі оқу бағдарламасын алдын ала жүргізуге арналған кезең болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_3" value="E"> Баланың дербес ойын әрекетін азайтып, оқу әрекетіне толық көшетін кезең болғандықтан</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Мектепке дейінгі кезеңде тұлғаның негізгі қасиеттері, мінез-құлық, қарым-қатынас және танымдық белсенділік негіздері қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">4. Тәрбие ұғымының педагогикалық мазмұны қай жауапта нақты берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_4" value="A"> Баланың оқу тапсырмасын орындау жылдамдығын арттыру процесі</label>
+                <label class="option"><input type="radio" name="qz_4" value="B"> Балаларды бірдей әрекет түріне бағындыру жүйесі</label>
+                <label class="option"><input type="radio" name="qz_4" value="C"> Баланың тұлғалық сапаларын, құндылықтарын, мінез-құлқын және әлеуметтік тәжірибесін қалыптастыру процесі</label>
+                <label class="option"><input type="radio" name="qz_4" value="D"> Баланың дайын білімді есте сақтап, қайта айту әрекеті</label>
+                <label class="option"><input type="radio" name="qz_4" value="E"> Ұйымдастырылған іс-әрекеттің уақытын белгілеу тәртібі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Тәрбие баланың тұлғалық сапаларын, құндылықтарын, мінез-құлқын және әлеуметтік тәжірибесін қалыптастыруға бағытталады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">5. Оқыту мектепке дейінгі педагогикада қандай процесс ретінде түсіндіріледі?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_5" value="A"> Баланың тәртібін бақылауға арналған ұйымдастыру формасы</label>
+                <label class="option"><input type="radio" name="qz_5" value="B"> Балалардың нәтижесін бірдей тапсырмамен салыстыру тәсілі</label>
+                <label class="option"><input type="radio" name="qz_5" value="C"> Бастауыш мектеп пәндерін ерте меңгерту жолы</label>
+                <label class="option"><input type="radio" name="qz_5" value="D"> Баланың дербес әрекетін шектейтін педагогикалық басқару</label>
+                <label class="option"><input type="radio" name="qz_5" value="E"> Білім, білік, дағды, танымдық қызығушылық және ойлау әрекетін қалыптастыру процесі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Оқыту баланың білімін, білігін, дағдысын, танымдық қызығушылығын және ойлауын қалыптастырады.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">6. Баланың дамуы ұғымына қай мазмұн сәйкес келеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_6" value="A"> Сабақ кестесін сақтауы және тапсырманы уақытында орындауы</label>
+                <label class="option"><input type="radio" name="qz_6" value="B"> Дене, психикалық, әлеуметтік, эмоциялық және танымдық сапаларының өзгеруі мен жетілуі</label>
+                <label class="option"><input type="radio" name="qz_6" value="C"> Педагогтің түсіндірген мазмұнын дәл қайталауы</label>
+                <label class="option"><input type="radio" name="qz_6" value="D"> Баланың оқу нәтижесін басқа балалармен салыстыруы</label>
+                <label class="option"><input type="radio" name="qz_6" value="E"> Баланың мектеп пәндерін алдын ала меңгеруі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Даму баланың дене, психикалық, әлеуметтік, эмоциялық және танымдық сапаларының жетілуімен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">7. Педагогикалық процесс мектепке дейінгі ұйымда қандай жүйе ретінде қарастырылады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_7" value="A"> Балалардың оқу нәтижесін тіркейтін бақылау жүйесі</label>
+                <label class="option"><input type="radio" name="qz_7" value="B"> Сабақ кестесін және күн тәртібін бекітетін әкімшілік жүйе</label>
+                <label class="option"><input type="radio" name="qz_7" value="C"> Педагогтің балаларға дайын білімді беру формасы</label>
+                <label class="option"><input type="radio" name="qz_7" value="D"> Тәрбие, оқыту, дамыту және әлеуметтендіру міндеттерін біріктіретін мақсатты ұйымдастырылған жүйе</label>
+                <label class="option"><input type="radio" name="qz_7" value="E"> Балаларды жас ерекшелігі бойынша механикалық бөлу тәртібі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Педагогикалық процесс тәрбие, оқыту, дамыту және әлеуметтендіру міндеттерін бірлікте қамтиды.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">8. Мектепке дейінгі тәрбиенің кешенді сипаты қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_8" value="A"> Дене, ақыл-ой, адамгершілік, эстетикалық, еңбек, экологиялық және әлеуметтік тәрбие бағыттарының өзара байланысы</label>
+                <label class="option"><input type="radio" name="qz_8" value="B"> Балалардың сабақта тыныш отыруы, тапсырманы орындауы және нәтижені көрсетуі</label>
+                <label class="option"><input type="radio" name="qz_8" value="C"> Жазбаша тапсырма, бақылау жұмысы, бағалау және салыстыру жүйесі</label>
+                <label class="option"><input type="radio" name="qz_8" value="D"> Мектепалды пәндерін ерте жастан оқыту және оқу жүктемесін арттыру</label>
+                <label class="option"><input type="radio" name="qz_8" value="E"> Топтағы барлық балаға бірдей тәртіп пен бірдей әрекет формасын қолдану</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Мектепке дейінгі тәрбие баланы жан-жақты дамытуға бағытталған бірнеше тәрбие бағытының бірлігін қамтиды.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">9. Дене тәрбиесінің мектепке дейінгі педагогикадағы негізгі мақсаты қайсы?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_9" value="A"> Баланың сөйлеу мәдениетін және сөздік қорын қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_9" value="B"> Баланың өнерге қызығушылығын және көркем талғамын дамыту</label>
+                <label class="option"><input type="radio" name="qz_9" value="C"> Денсаулықты нығайту, қимыл дағдыларын дамыту, мәдени-гигиеналық әдеттерді қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_9" value="D"> Баланың математикалық түсініктерін және логикалық ойлауын дамыту</label>
+                <label class="option"><input type="radio" name="qz_9" value="E"> Баланың еңбек құралдарын танып, тапсырманы орындауын бақылау</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Дене тәрбиесі денсаулықты нығайтуға, қимыл дағдыларын дамытуға және мәдени-гигиеналық әдеттерді қалыптастыруға бағытталады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">10. Ақыл-ой тәрбиесінің мазмұны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_10" value="A"> Баланың қимыл белсенділігін, шынығуын және дене сапаларын дамыту</label>
+                <label class="option"><input type="radio" name="qz_10" value="B"> Баланың адамгершілік нормаларын, мінез-құлқын және қарым-қатынасын қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_10" value="C"> Баланың көркем қабылдауын, шығармашылық қиялын және эстетикалық сезімін дамыту</label>
+                <label class="option"><input type="radio" name="qz_10" value="D"> Баланың еңбекке қатынасын, ұқыптылығын және жауапкершілігін тәрбиелеу</label>
+                <label class="option"><input type="radio" name="qz_10" value="E"> Танымдық қызығушылық, ойлау, қабылдау, зейін, ес және қоршаған орта туралы түсініктерді дамыту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Ақыл-ой тәрбиесі баланың танымдық процестерін, ойлауын және қоршаған орта туралы түсініктерін дамытады.</div>
+            </div>
+                        <div class="question" data-answer="B">
+              <div class="q-title">11. Адамгершілік тәрбиесінің негізгі мазмұны қай жауапта дұрыс көрсетілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_11" value="A"> Баланың негізгі қимылдарын, дене сапаларын және шынығу дағдыларын дамыту</label>
+                <label class="option"><input type="radio" name="qz_11" value="B"> Ізгілік, жауапкершілік, сыйластық, мейірімділік, ұжымшылдық және мінез-құлық мәдениетін қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_11" value="C"> Баланың көркемдік талғамын, музыкалық қабілетін және бейнелеу дағдысын дамыту</label>
+                <label class="option"><input type="radio" name="qz_11" value="D"> Заттардың қасиетін ажырату, салыстыру, топтастыру және санау дағдыларын қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_11" value="E"> Табиғат құбылыстарын бақылау, өсімдіктер мен жануарларға қызығушылық таныту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Адамгершілік тәрбиесі баланың ізгілік, жауапкершілік, сыйластық, мейірімділік, ұжымшылдық және мінез-құлық мәдениетін қалыптастыруға бағытталады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">12. Эстетикалық тәрбиенің мектепке дейінгі кезеңдегі негізгі бағыты қайсы?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_12" value="A"> Қимыл белсенділігін арттыру, шынықтыру және дене сапаларын жетілдіру</label>
+                <label class="option"><input type="radio" name="qz_12" value="B"> Еңбек тапсырмаларын орындау, ұқыптылық пен жауапкершілікті тәрбиелеу</label>
+                <label class="option"><input type="radio" name="qz_12" value="C"> Қоғамдық мінез-құлық ережелерін меңгерту және құрдастармен қарым-қатынас қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_12" value="D"> Сұлулықты қабылдау, көркемдік талғам, шығармашылық қиял және өнерге қызығушылық қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_12" value="E"> Қоршаған орта туралы қарапайым түсініктер мен танымдық әрекетті дамыту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Эстетикалық тәрбие сұлулықты қабылдауға, көркемдік талғамға, шығармашылық қиялға және өнерге қызығушылыққа негізделеді.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">13. Еңбек тәрбиесінің мектеп жасына дейінгі балаларға қатысты мазмұны қай жауапта берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_13" value="A"> Өзіне-өзі қызмет ету, қарапайым еңбек әрекеті, ұқыптылық, жауапкершілік және еңбекке оң қатынас қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_13" value="B"> Дене жаттығуларын орындау, қимыл сапаларын жетілдіру және шынығу</label>
+                <label class="option"><input type="radio" name="qz_13" value="C"> Сөйлеу мәдениетін дамыту, байланыстырып сөйлеу және сөздік қорды кеңейту</label>
+                <label class="option"><input type="radio" name="qz_13" value="D"> Музыка тыңдау, ән айту, сурет салу және мүсіндеу дағдыларын қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_13" value="E"> Сенсорлық эталондарды меңгеру, санау және кеңістіктік түсініктерді дамыту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Еңбек тәрбиесі өзіне-өзі қызмет ету, қарапайым еңбек әрекеті, ұқыптылық, жауапкершілік және еңбекке оң қатынас қалыптастырумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">14. Экологиялық тәрбиенің негізгі мазмұны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_14" value="A"> Баланың көркемдік бейнелеу әрекеті мен музыкалық қабілетін дамыту</label>
+                <label class="option"><input type="radio" name="qz_14" value="B"> Баланың еңбекке қатынасын және тұрмыстық дағдыларын қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_14" value="C"> Табиғат туралы түсінік, тірі және өлі табиғатқа қызығушылық, табиғатты қорғау және ұқыпты қатынас қалыптастыру</label>
+                <label class="option"><input type="radio" name="qz_14" value="D"> Баланың дыбыстық мәдениетін, сөздік қорын және сөйлеу белсенділігін дамыту</label>
+                <label class="option"><input type="radio" name="qz_14" value="E"> Баланың дене сапаларын, қимыл дағдыларын және қауіпсіздік мінез-құлқын қалыптастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Экологиялық тәрбие табиғат туралы түсінік қалыптастыруға, табиғатты қорғауға және оған ұқыпты қатынас жасауға бағытталады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">15. Мектепке дейінгі жаста ойынның жетекші іс-әрекет болуы немен түсіндіріледі?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_15" value="A"> Ойын балалардың бос уақытын толтыруға қолайлы әрекет болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_15" value="B"> Ойын ұйымдастырылған сабақтан кейінгі демалыс түрі болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_15" value="C"> Ойын тәртіп сақтаған балаларға берілетін марапат болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_15" value="D"> Ойын баланың оқу нәтижесін тексеруге арналған бақылау құралы болғандықтан</label>
+                <label class="option"><input type="radio" name="qz_15" value="E"> Ойын арқылы баланың қиялы, қарым-қатынасы, ойлауы, мінез-құлқы және әлеуметтік тәжірибесі дамитындықтан</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Ойын мектепке дейінгі жаста баланың психикалық, әлеуметтік және тұлғалық дамуына ерекше ықпал етеді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">16. Сюжеттік-рөлдік ойынның педагогикалық мәні қай жауапта дұрыс ашылған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_16" value="A"> Балалардың қимыл дағдыларын жарыс жағдайында жетілдіруге бағытталған ойын түрі</label>
+                <label class="option"><input type="radio" name="qz_16" value="B"> Балалардың ересектер өмірін, қарым-қатынасын және әлеуметтік рөлдерді бейнелеуі арқылы тәжірибе жинақтауы</label>
+                <label class="option"><input type="radio" name="qz_16" value="C"> Балалардың дайын ережені орындап, жеңіске жетуге бағытталатын әрекеті</label>
+                <label class="option"><input type="radio" name="qz_16" value="D"> Балалардың заттарды пішіні, түсі және көлемі бойынша салыстыру әрекеті</label>
+                <label class="option"><input type="radio" name="qz_16" value="E"> Балалардың музыкалық ырғаққа сәйкес қимыл орындауы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Сюжеттік-рөлдік ойын балалардың әлеуметтік рөлдерді бейнелеуіне, қарым-қатынас жасауына және өмір тәжірибесін меңгеруіне ықпал етеді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">17. Дидактикалық ойынның негізгі ерекшелігі қай жауапта көрсетілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_17" value="A"> Баланың тұрмыстық еңбекті орындау дағдысын қалыптастыруы</label>
+                <label class="option"><input type="radio" name="qz_17" value="B"> Баланың қимыл әрекетін жарыс және қозғалыс арқылы жетілдіруі</label>
+                <label class="option"><input type="radio" name="qz_17" value="C"> Баланың ересектер өміріндегі рөлдерді өзара бөлісуі</label>
+                <label class="option"><input type="radio" name="qz_17" value="D"> Ойын міндеті мен оқу міндетінің бірігуі арқылы танымдық әрекетті дамытуы</label>
+                <label class="option"><input type="radio" name="qz_17" value="E"> Баланың бейнелеу материалдарын еркін қолдануы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Дидактикалық ойын оқу міндетін ойын мазмұнымен біріктіріп, баланың танымдық белсенділігін дамытады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">18. Қимылды ойындар мектеп жасына дейінгі балаларда қандай сапаларды дамытады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_18" value="A"> Ептілік, жылдамдық, төзімділік, қимыл үйлесімділігі және ережені сақтау дағдылары</label>
+                <label class="option"><input type="radio" name="qz_18" value="B"> Сөздік қор, дыбыстық мәдениет, сөйлеу белсенділігі және мәтін түсіну</label>
+                <label class="option"><input type="radio" name="qz_18" value="C"> Көркемдік талғам, бейнелеу дағдысы, музыкалық есту және ырғақ сезімі</label>
+                <label class="option"><input type="radio" name="qz_18" value="D"> Санау, салыстыру, топтастыру және кеңістікті бағдарлау түсініктері</label>
+                <label class="option"><input type="radio" name="qz_18" value="E"> Өзіне-өзі қызмет ету, еңбекке баулу және тұрмыстық жауапкершілік</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Қимылды ойындар ептілік, жылдамдық, төзімділік, үйлесімділік және ережені сақтау дағдыларын дамытады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">19. Мектепке дейінгі оқытуда көрнекілік қағидасы қандай талаппен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_19" value="A"> Балаларға дайын білімді ауызша түсіндіруді күшейту талабымен</label>
+                <label class="option"><input type="radio" name="qz_19" value="B"> Балалардың нәтижесін бірдей өлшеммен салыстыру талабымен</label>
+                <label class="option"><input type="radio" name="qz_19" value="C"> Баланың затты, құбылысты, әрекетті көру, ұстау, бақылау және тәжірибе арқылы тану талабымен</label>
+                <label class="option"><input type="radio" name="qz_19" value="D"> Оқу тапсырмасын жазбаша орындау талабымен</label>
+                <label class="option"><input type="radio" name="qz_19" value="E"> Ұйымдастырылған іс-әрекетті мектеп сабағына жақындату талабымен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Көрнекілік қағидасы баланың заттар мен құбылыстарды тікелей қабылдауына, бақылауына және тәжірибе жасауына сүйенеді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">20. Мектепке дейінгі оқытудағы белсенділік қағидасы қай жауапта дұрыс сипатталған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_20" value="A"> Баланың педагог айтқан мазмұнды тыңдап, сол күйінде қайталауы</label>
+                <label class="option"><input type="radio" name="qz_20" value="B"> Балалардың бірдей тапсырманы бір уақытта орындауы</label>
+                <label class="option"><input type="radio" name="qz_20" value="C"> Баланың әрекетін педагогтің толық басқаруы</label>
+                <label class="option"><input type="radio" name="qz_20" value="D"> Балалардың оқу нәтижесін салыстырып бағалау</label>
+                <label class="option"><input type="radio" name="qz_20" value="E"> Баланың сұрақ қоюы, бақылауы, салыстыруы, әрекет етуі және өз тәжірибесі арқылы меңгеруі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Белсенділік қағидасы баланың таным процесіне әрекет, сұрақ, бақылау және тәжірибе арқылы қатысуын талап етеді.</div>
+            </div>
+                        <div class="question" data-answer="B">
+              <div class="q-title">21. Жас ерекшелік қағидасы мектепке дейінгі оқытуда қандай талапты білдіреді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_21" value="A"> Барлық жас тобында бірдей мазмұн мен бірдей әдісті қолдану</label>
+                <label class="option"><input type="radio" name="qz_21" value="B"> Баланың жасына, даму деңгейіне, қабылдау мүмкіндігіне және қызығушылығына сай ұйымдастыру</label>
+                <label class="option"><input type="radio" name="qz_21" value="C"> Оқу тапсырмасын күрделендіріп, мектеп мазмұнын ертерек енгізу</label>
+                <label class="option"><input type="radio" name="qz_21" value="D"> Балаларды даму нәтижесіне қарай тұрақты топтарға бөлу</label>
+                <label class="option"><input type="radio" name="qz_21" value="E"> Баланың дербес әрекетін азайтып, түсіндіру уақытын көбейту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Жас ерекшелік қағидасы оқыту мен тәрбиені баланың жасына, даму деңгейіне, қабылдау мүмкіндігіне және қызығушылығына сай ұйымдастыруды талап етеді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">22. Жүйелілік және бірізділік қағидасы мектепке дейінгі оқытуда қалай көрінеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_22" value="A"> Баланың әрекетін бір ғана тапсырма түрімен шектеу арқылы</label>
+                <label class="option"><input type="radio" name="qz_22" value="B"> Оқу мазмұнын балалардың қызығушылығынан бөлек жоспарлау арқылы</label>
+                <label class="option"><input type="radio" name="qz_22" value="C"> Балалардың нәтижесін тұрақты салыстыру және рейтинг жасау арқылы</label>
+                <label class="option"><input type="radio" name="qz_22" value="D"> Материалды қарапайымнан күрделіге, белгіліден белгісізге, жақыннан алысқа қарай беру арқылы</label>
+                <label class="option"><input type="radio" name="qz_22" value="E"> Ұйымдастырылған іс-әрекетті мектеп сабағы формасына көшіру арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Жүйелілік және бірізділік қағидасы материалды қарапайымнан күрделіге, белгіліден белгісізге және жақыннан алысқа қарай ұйымдастырумен сипатталады.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">23. Қолжетімділік қағидасы мектепке дейінгі оқытуда қандай мазмұнмен сипатталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_23" value="A"> Оқу материалының баланың жасына, тәжірибесіне, қабылдауына және түсіну мүмкіндігіне сәйкес берілуі</label>
+                <label class="option"><input type="radio" name="qz_23" value="B"> Барлық балаларға бірдей күрделіліктегі тапсырманың берілуі</label>
+                <label class="option"><input type="radio" name="qz_23" value="C"> Оқу мазмұнын бастауыш мектеп пәндерімен толық сәйкестендіру</label>
+                <label class="option"><input type="radio" name="qz_23" value="D"> Балалардың нәтижесін бір өлшеммен салыстыру арқылы бағалау</label>
+                <label class="option"><input type="radio" name="qz_23" value="E"> Баланың дербес әрекетін педагог түсіндіруімен алмастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Қолжетімділік қағидасы оқу материалының баланың жасына, тәжірибесіне және түсіну мүмкіндігіне сәйкес болуын білдіреді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">24. Саналылық қағидасы мектеп жасына дейінгі балаларды оқытуда қалай көрінеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_24" value="A"> Баланың дайын жауапты есте сақтап, өзгеріссіз қайталауында</label>
+                <label class="option"><input type="radio" name="qz_24" value="B"> Балалардың әрекетін педагогтің нұсқауына толық бағындыруда</label>
+                <label class="option"><input type="radio" name="qz_24" value="C"> Баланың әрекеттің мәнін түсініп, себеп-салдар байланысын байқап, білімді қолдануға ұмтылуында</label>
+                <label class="option"><input type="radio" name="qz_24" value="D"> Балаларды оқу нәтижесі бойынша топтастыруда</label>
+                <label class="option"><input type="radio" name="qz_24" value="E"> Оқу тапсырмаларын жазбаша түрде көбейтуде</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Саналылық қағидасы баланың әрекет мәнін түсінуін, байланыстарды байқауын және меңгергенін қолдануға ұмтылуын талап етеді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">25. Мектепке дейінгі оқытудағы тәрбиелік сипат қағидасы қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_25" value="A"> Оқыту мазмұнын бағалау жұмысына бағындыру</label>
+                <label class="option"><input type="radio" name="qz_25" value="B"> Оқу тапсырмаларын орындау жылдамдығын арттыру</label>
+                <label class="option"><input type="radio" name="qz_25" value="C"> Балаларды оқу нәтижесіне қарай салыстыру</label>
+                <label class="option"><input type="radio" name="qz_25" value="D"> Ұйымдастырылған іс-әрекетті мектеп сабағы түрінде өткізу</label>
+                <label class="option"><input type="radio" name="qz_25" value="E"> Оқыту барысында баланың мінез-құлқын, құндылығын, қарым-қатынасын және тұлғалық сапаларын қалыптастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Тәрбиелік сипат қағидасы оқыту процесінің баланың мінез-құлқы, құндылықтары және тұлғалық сапаларын қалыптастырумен байланысын көрсетеді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">26. Мектеп жасына дейінгі балаларды оқытуда ойын әдісінің маңызы қай жауапта дұрыс сипатталған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_26" value="A"> Ойын баланың оқу нәтижесін тексеруге арналған бағалау тәсілі ретінде қолданылады</label>
+                <label class="option"><input type="radio" name="qz_26" value="B"> Ойын баланың қызығушылығын арттырып, танымдық әрекетті табиғи әрі белсенді түрде ұйымдастыруға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qz_26" value="C"> Ойын сабақтан кейінгі бос уақытты реттеу құралы ретінде қолданылады</label>
+                <label class="option"><input type="radio" name="qz_26" value="D"> Ойын балалардың дербес таңдауын азайтып, тәртіпті күшейтуге бағытталады</label>
+                <label class="option"><input type="radio" name="qz_26" value="E"> Ойын оқу міндетінен бөлек, тек көңіл көтеру үшін ұйымдастырылады</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Ойын әдісі баланың қызығушылығын арттырып, танымдық әрекетті белсенді және табиғи түрде ұйымдастыруға мүмкіндік береді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">27. Сөздік әдістер мектепке дейінгі оқытуда қандай әрекеттер арқылы көрінеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_27" value="A"> Заттарды бақылау, тәжірибе жасау, салыстыру және зерттеу арқылы</label>
+                <label class="option"><input type="radio" name="qz_27" value="B"> Қимыл жаттығулары, қозғалыс ойындары және дене әрекеттері арқылы</label>
+                <label class="option"><input type="radio" name="qz_27" value="C"> Мүсіндеу, сурет салу, жапсыру және музыка тыңдау арқылы</label>
+                <label class="option"><input type="radio" name="qz_27" value="D"> Әңгімелеу, түсіндіру, сұрақ-жауап, әңгімелесу және көркем мәтінді оқу арқылы</label>
+                <label class="option"><input type="radio" name="qz_27" value="E"> Өзіне-өзі қызмет ету, еңбек тапсырмасы және кезекшілік арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Сөздік әдістер әңгімелеу, түсіндіру, сұрақ-жауап, әңгімелесу және көркем мәтінді оқу арқылы жүзеге асады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">28. Көрнекі әдістердің мектепке дейінгі оқытудағы ерекшелігі қай жауапта берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_28" value="A"> Баланың заттарды, суреттерді, құбылыстарды, әрекеттерді тікелей қабылдауына және бақылауына сүйенуі</label>
+                <label class="option"><input type="radio" name="qz_28" value="B"> Балалардың дайын жауаптарды есте сақтап айтуына бағытталуы</label>
+                <label class="option"><input type="radio" name="qz_28" value="C"> Балалардың нәтижесін жазбаша бақылау арқылы бағалауы</label>
+                <label class="option"><input type="radio" name="qz_28" value="D"> Оқу мазмұнын тек педагогтің ауызша түсіндіруіне негіздеуі</label>
+                <label class="option"><input type="radio" name="qz_28" value="E"> Балаларды оқу деңгейіне қарай тұрақты топтарға бөлуі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Көрнекі әдістер баланың заттарды, суреттерді, құбылыстарды және әрекеттерді тікелей қабылдауына сүйенеді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">29. Практикалық әдістер баланың қандай әрекетімен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_29" value="A"> Дайын мәтінді есте сақтап, өзгеріссіз қайталауымен</label>
+                <label class="option"><input type="radio" name="qz_29" value="B"> Педагогтің түсіндіруін тыңдап, жауапты айтуымен</label>
+                <label class="option"><input type="radio" name="qz_29" value="C"> Жаттығу жасау, тәжірибе орындау, құрастыру, еңбек ету және әрекет арқылы меңгеруімен</label>
+                <label class="option"><input type="radio" name="qz_29" value="D"> Басқа балалардың нәтижесімен салыстырылуымен</label>
+                <label class="option"><input type="radio" name="qz_29" value="E"> Сабақ кестесін сақтап, тыныш отыруымен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Практикалық әдістер баланың жаттығу, тәжірибе, құрастыру, еңбек және нақты әрекет арқылы меңгеруімен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">30. Мектепке дейінгі ұйымдағы заттық-дамытушы ортаның педагогикалық мәні қай жауапта дұрыс ашылған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qz_30" value="A"> Балалардың оқу нәтижесін тіркеуге арналған бақылау кеңістігі</label>
+                <label class="option"><input type="radio" name="qz_30" value="B"> Педагогтің сабақ материалдарын балалардан алыс сақтайтын орын</label>
+                <label class="option"><input type="radio" name="qz_30" value="C"> Балалардың әрекетін бір тапсырмаға бағындыратын ұйымдастыру құралы</label>
+                <label class="option"><input type="radio" name="qz_30" value="D"> Сабақ кестесін және оқу жүктемесін реттейтін әкімшілік жүйе</label>
+                <label class="option"><input type="radio" name="qz_30" value="E"> Баланың ойын, танымдық, шығармашылық, қимыл және дербес әрекетін қолдайтын педагогикалық кеңістік</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Заттық-дамытушы орта баланың ойын, танымдық, шығармашылық, қимыл және дербес әрекетіне жағдай жасайды.</div>
+            </div>
+      <section class="book-section" id="book-andabekova">
+        <div class="book-title-card">
+          <h2>2-кітап. Андабекова С. “Мектепке дейінгі педагогика”</h2>
+          <p>
+            Бұл бөлім мектеп жасына дейінгі балаларды тәрбиелеу мен оқытудың теориялық
+            негіздерін, педагогикалық процестің құрылымын, тәрбие бағыттарын, оқыту
+            әдістерін, баланың дамуын және мектепке дейінгі ұйымдағы жұмыстың мазмұнын қамтиды.
+          </p>
+
+          <div class="info-grid">
+            <div class="info">
+              <strong>Кітап бағыты</strong>
+              <span>Тәрбиелеу мен оқытудың теориясы және әдістемесі</span>
+            </div>
+            <div class="info">
+              <strong>Негізгі мазмұн</strong>
+              <span>Мақсат, міндет, ұстаным, әдіс, тәрбие бағыттары, бала дамуы</span>
+            </div>
+            <div class="info">
+              <strong>Дайындық форматы</strong>
+              <span>Теория, тірек ұғымдар, күрделі тест тапсырмалары</span>
+            </div>
+          </div>
+        </div>
+
+        <article class="card">
+          <h3>Қысқаша теория</h3>
+
+          <div class="list">
+            <div class="list-item">
+              <div class="num">1</div>
+              <div>
+                <strong>Педагогикалық процесс</strong>
+                <span>Мектепке дейінгі ұйымда тәрбие, оқыту, дамыту және әлеуметтендіру міндеттері өзара байланыста жүзеге асады.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">2</div>
+              <div>
+                <strong>Тәрбиенің мақсаты</strong>
+                <span>Баланың тұлғалық қасиеттерін, адамгершілік мінез-құлқын, танымдық қызығушылығын және әлеуметтік тәжірибесін қалыптастыру.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">3</div>
+              <div>
+                <strong>Тәрбиенің мазмұны</strong>
+                <span>Дене, ақыл-ой, адамгершілік, эстетикалық, еңбек, экологиялық және әлеуметтік тәрбие бағыттары арқылы ашылады.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">4</div>
+              <div>
+                <strong>Оқыту әдістері</strong>
+                <span>Сөздік, көрнекілік, практикалық, ойын және проблемалық әдістер баланың белсенді танымдық әрекетін ұйымдастыруға қызмет етеді.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">5</div>
+              <div>
+                <strong>Баланың дамуын ұйымдастыру</strong>
+                <span>Баланың жас және жеке ерекшелігі, даму қарқыны, қызығушылығы мен қажеттілігі педагогикалық жұмыстың негізі болады.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Негізгі ұғымдар</h3>
+
+          <div class="term-grid">
+            <div class="term">
+              <strong>Педагогикалық мақсат</strong>
+              <span>Баланың даму нәтижесіне бағытталған тәрбие мен оқытудағы алдын ала белгіленген бағдар.</span>
+            </div>
+
+            <div class="term">
+              <strong>Педагогикалық міндет</strong>
+              <span>Мақсатқа жету үшін орындалатын нақты тәрбиелік, дамытушылық және оқытушылық әрекеттер жүйесі.</span>
+            </div>
+
+            <div class="term">
+              <strong>Әдіс</strong>
+              <span>Педагог пен баланың бірлескен әрекеті арқылы білім, дағды және тұлғалық сапаларды қалыптастыру жолы.</span>
+            </div>
+
+            <div class="term">
+              <strong>Ұстаным</strong>
+              <span>Тәрбиелеу мен оқыту процесін ұйымдастыруда басшылыққа алынатын негізгі педагогикалық талап.</span>
+            </div>
+
+            <div class="term">
+              <strong>Педагогикалық жағдаят</strong>
+              <span>Баланың дамуына, мінез-құлқына немесе қарым-қатынасына қатысты педагог шешім қабылдайтын нақты жағдай.</span>
+            </div>
+
+            <div class="term">
+              <strong>Тұлғалық даму</strong>
+              <span>Баланың өзіндік сана, қарым-қатынас, мінез-құлық, құндылық және дербестік сапаларының қалыптасуы.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Андабекова бойынша тест</h3>
+          <div class="test-box" data-test="testAndabekova">
+
+            <div class="question" data-answer="C">
+              <div class="q-title">1. Андабекова еңбегіндегі мектепке дейінгі педагогиканың негізгі мазмұны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_1" value="A"> Балалардың мектепке барғаннан кейінгі пәндік үлгерімін бағалау жүйесі</label>
+                <label class="option"><input type="radio" name="qa_1" value="B"> Бастауыш сыныптағы оқу пәндерін мектеп жасына дейінгі кезеңге көшіру әдістемесі</label>
+                <label class="option"><input type="radio" name="qa_1" value="C"> Мектеп жасына дейінгі балаларды тәрбиелеу мен оқытудың теориялық негіздері, мазмұны, міндеттері және әдістері</label>
+                <label class="option"><input type="radio" name="qa_1" value="D"> Педагогтердің аттестаттау талаптары мен кәсіби стандарттарын жүйелеу</label>
+                <label class="option"><input type="radio" name="qa_1" value="E"> Мектепалды сыныптардағы бақылау жұмыстары мен тест тапсырмаларын құрастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Андабекова кітабы мектеп жасына дейінгі балаларды тәрбиелеу мен оқытудың теориясы, мазмұны, міндеттері және әдістерін қарастырады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">2. Педагогикалық процестің тұтастығы қандай мазмұнмен сипатталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_2" value="A"> Тәрбие, оқыту, дамыту және әлеуметтендірудің өзара байланыста жүзеге асуымен</label>
+                <label class="option"><input type="radio" name="qa_2" value="B"> Балалардың оқу нәтижесін бірдей өлшеммен салыстыруымен</label>
+                <label class="option"><input type="radio" name="qa_2" value="C"> Ұйымдастырылған іс-әрекетті мектеп сабағы формасында өткізуімен</label>
+                <label class="option"><input type="radio" name="qa_2" value="D"> Ойын әрекетін бос уақытты толтыру формасына айналдыруымен</label>
+                <label class="option"><input type="radio" name="qa_2" value="E"> Балаларды даму деңгейіне қарай тұрақты топтарға бөлуімен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Педагогикалық процесс тәрбие, оқыту, дамыту және әлеуметтендіру міндеттерін тұтас байланыстырады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">3. Тәрбиенің мақсаты мектепке дейінгі педагогикада қандай нәтижеге бағытталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_3" value="A"> Баланың жазбаша тапсырманы тез орындауына</label>
+                <label class="option"><input type="radio" name="qa_3" value="B"> Балаларды оқу көрсеткіші бойынша салыстыруға</label>
+                <label class="option"><input type="radio" name="qa_3" value="C"> Бастауыш мектеп пәндерін толық меңгертуге</label>
+                <label class="option"><input type="radio" name="qa_3" value="D"> Баланың тұлғалық қасиеттерін, құндылықтарын, мінез-құлқын және әлеуметтік тәжірибесін қалыптастыруға</label>
+                <label class="option"><input type="radio" name="qa_3" value="E"> Сабақ кестесін тұрақты орындауға</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Тәрбие мақсаты баланың тұлғалық қасиеттері, құндылықтары, мінез-құлқы және әлеуметтік тәжірибесін қалыптастырумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">4. Тәрбиенің міндеті ұғымы қай жауапта дұрыс ашылған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_4" value="A"> Балаларға берілетін жазбаша тапсырмалардың жалпы саны</label>
+                <label class="option"><input type="radio" name="qa_4" value="B"> Тәрбиенің мақсатына жету үшін орындалатын нақты педагогикалық әрекеттер мен бағыттар</label>
+                <label class="option"><input type="radio" name="qa_4" value="C"> Баланың оқу нәтижесін тіркейтін бақылау парағы</label>
+                <label class="option"><input type="radio" name="qa_4" value="D"> Мектепалды топтағы сабақ кестесінің құрылымы</label>
+                <label class="option"><input type="radio" name="qa_4" value="E"> Педагогтің ата-аналарға беретін үй тапсырмасы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Тәрбиенің міндеті мақсатқа жету үшін орындалатын нақты педагогикалық әрекеттер мен бағыттарды білдіреді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">5. Мектепке дейінгі тәрбиенің мазмұны қандай бағыттар арқылы ашылады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_5" value="A"> Жазбаша жұмыс, бақылау, бағалау, салыстыру және рейтинг арқылы</label>
+                <label class="option"><input type="radio" name="qa_5" value="B"> Сабақ кестесі, пәндік оқыту, үй тапсырмасы және емтихан арқылы</label>
+                <label class="option"><input type="radio" name="qa_5" value="C"> Қатысу есебі, тәртіп журналы, құжат жүргізу және есеп беру арқылы</label>
+                <label class="option"><input type="radio" name="qa_5" value="D"> Дайын білімді түсіндіру, есте сақтау және қайта айту арқылы</label>
+                <label class="option"><input type="radio" name="qa_5" value="E"> Дене, ақыл-ой, адамгершілік, эстетикалық, еңбек, экологиялық және әлеуметтік тәрбие арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Тәрбие мазмұны баланы жан-жақты дамытуға бағытталған тәрбие бағыттары арқылы ашылады.</div>
+            </div>
+                        <div class="question" data-answer="C">
+              <div class="q-title">6. Дене тәрбиесі баланың қандай дамуына тікелей бағытталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_6" value="A"> Сөйлеу мәдениеті, байланыстырып сөйлеу және сөздік қорын дамытуға</label>
+                <label class="option"><input type="radio" name="qa_6" value="B"> Көркем талғам, шығармашылық қиял және эстетикалық сезімді қалыптастыруға</label>
+                <label class="option"><input type="radio" name="qa_6" value="C"> Денсаулықты нығайтуға, негізгі қимылдарды дамытуға және мәдени-гигиеналық дағдыларды қалыптастыруға</label>
+                <label class="option"><input type="radio" name="qa_6" value="D"> Санау, салыстыру, топтастыру және логикалық ойлауды дамытуға</label>
+                <label class="option"><input type="radio" name="qa_6" value="E"> Әлеуметтік нормалар, мейірімділік және қарым-қатынас мәдениетін қалыптастыруға</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Дене тәрбиесі баланың денсаулығын нығайтуға, негізгі қимылдарын дамытуға және мәдени-гигиеналық дағдыларын қалыптастыруға бағытталған.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">7. Ақыл-ой тәрбиесінің негізгі міндеті қай жауапта дұрыс көрсетілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_7" value="A"> Танымдық қызығушылықты, ойлауды, қабылдауды, зейінді және қоршаған орта туралы түсініктерді дамыту</label>
+                <label class="option"><input type="radio" name="qa_7" value="B"> Негізгі қимылдарды, дене сапаларын және шынықтыру дағдыларын қалыптастыру</label>
+                <label class="option"><input type="radio" name="qa_7" value="C"> Еңбекке жауапкершілікпен қарау және тұрмыстық әрекеттерді орындау</label>
+                <label class="option"><input type="radio" name="qa_7" value="D"> Сұлулықты қабылдау және көркемдік талғам қалыптастыру</label>
+                <label class="option"><input type="radio" name="qa_7" value="E"> Қоғамдық мінез-құлық ережелері мен адамгершілік нормаларын меңгерту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Ақыл-ой тәрбиесі танымдық қызығушылықты, ойлауды, қабылдауды, зейінді және қоршаған орта туралы түсініктерді дамытады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">8. Адамгершілік тәрбиесі қандай педагогикалық міндетпен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_8" value="A"> Баланың дене сапаларын және қимыл белсенділігін арттырумен</label>
+                <label class="option"><input type="radio" name="qa_8" value="B"> Баланың сурет салу, мүсіндеу және музыкаға қызығушылығын дамытумен</label>
+                <label class="option"><input type="radio" name="qa_8" value="C"> Баланың заттардың қасиетін ажырату және салыстыру дағдыларын қалыптастырумен</label>
+                <label class="option"><input type="radio" name="qa_8" value="D"> Мейірімділік, сыйластық, жауапкершілік, ұжымшылдық және мінез-құлық мәдениетін қалыптастырумен</label>
+                <label class="option"><input type="radio" name="qa_8" value="E"> Баланың табиғат құбылыстарын бақылау және тәжірибе жасау әрекетімен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Адамгершілік тәрбиесі мейірімділік, сыйластық, жауапкершілік, ұжымшылдық және мінез-құлық мәдениетін қалыптастырумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">9. Эстетикалық тәрбиенің мазмұны қай жауапта нақты берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_9" value="A"> Баланың еңбек әрекетіне қатысуы, ұқыптылығы және жауапкершілігі</label>
+                <label class="option"><input type="radio" name="qa_9" value="B"> Сұлулықты қабылдау, өнерге қызығушылық, көркемдік талғам және шығармашылық қабілет</label>
+                <label class="option"><input type="radio" name="qa_9" value="C"> Қимыл дағдылары, шынығу, дене сапалары және қауіпсіздік мінез-құлқы</label>
+                <label class="option"><input type="radio" name="qa_9" value="D"> Табиғатты қорғау, өсімдіктерге күтім жасау және экологиялық мәдениет</label>
+                <label class="option"><input type="radio" name="qa_9" value="E"> Сөздік қор, дыбыстық мәдениет және байланыстырып сөйлеу</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Эстетикалық тәрбие сұлулықты қабылдау, өнерге қызығушылық, көркемдік талғам және шығармашылық қабілет қалыптастыруды қамтиды.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">10. Еңбек тәрбиесі мектеп жасына дейінгі баланың қандай қасиеттерін дамытады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_10" value="A"> Сөйлеу белсенділігі, тілдік норма және дыбыстық мәдениетін</label>
+                <label class="option"><input type="radio" name="qa_10" value="B"> Қимыл белсенділігі, жылдамдық және төзімділігін</label>
+                <label class="option"><input type="radio" name="qa_10" value="C"> Көркемдік талғам, әуенді қабылдау және бейнелеуін</label>
+                <label class="option"><input type="radio" name="qa_10" value="D"> Санау, салыстыру, кеңістікте бағдарлау және логикалық ойлауын</label>
+                <label class="option"><input type="radio" name="qa_10" value="E"> Өзіне-өзі қызмет ету, ұқыптылық, жауапкершілік және еңбекке оң қатынасын</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Еңбек тәрбиесі өзіне-өзі қызмет ету, ұқыптылық, жауапкершілік және еңбекке оң қатынас қалыптастырумен байланысты.</div>
+            </div>
+                        <div class="question" data-answer="C">
+              <div class="q-title">11. Экологиялық тәрбие баланың қандай қатынасын қалыптастыруға бағытталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_11" value="A"> Өнер туындыларына қызығушылық пен көркемдік талғамын</label>
+                <label class="option"><input type="radio" name="qa_11" value="B"> Қимыл белсенділігі мен дене сапаларын</label>
+                <label class="option"><input type="radio" name="qa_11" value="C"> Табиғатқа ұқыпты қарау, тірі және өлі табиғатты бақылау, табиғатты қорғау мәдениетін</label>
+                <label class="option"><input type="radio" name="qa_11" value="D"> Сөздік қор мен байланыстырып сөйлеуін</label>
+                <label class="option"><input type="radio" name="qa_11" value="E"> Еңбек құралдарын қолдану және тұрмыстық әрекет орындауын</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Экологиялық тәрбие табиғатқа ұқыпты қатынас, тірі және өлі табиғатты бақылау және табиғатты қорғау мәдениетін қалыптастырумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">12. Мектепке дейінгі оқыту әдісі ұғымы қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_12" value="A"> Педагог пен баланың бірлескен әрекеті арқылы білім, дағды және тұлғалық сапаларды қалыптастыру жолы</label>
+                <label class="option"><input type="radio" name="qa_12" value="B"> Балалардың оқу нәтижесін салыстыратын бағалау өлшемі</label>
+                <label class="option"><input type="radio" name="qa_12" value="C"> Топтағы сабақ кестесінің апталық құрылымы</label>
+                <label class="option"><input type="radio" name="qa_12" value="D"> Баланың жасына қарай топқа бөліну тәртібі</label>
+                <label class="option"><input type="radio" name="qa_12" value="E"> Педагогтің есеп беру құжаттарын жүргізу формасы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Әдіс педагог пен баланың бірлескен әрекеті арқылы білім, дағды және тұлғалық сапаларды қалыптастыру жолы ретінде түсіндіріледі.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">13. Сөздік әдістерді қолданғанда педагог қандай әрекеттерге сүйенеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_13" value="A"> Бақылау, тәжірибе жасау, салыстыру және зерттеу әрекеттеріне</label>
+                <label class="option"><input type="radio" name="qa_13" value="B"> Қимылды ойын, жаттығу және дене әрекеттеріне</label>
+                <label class="option"><input type="radio" name="qa_13" value="C"> Сурет салу, жапсыру, мүсіндеу және музыка тыңдауға</label>
+                <label class="option"><input type="radio" name="qa_13" value="D"> Әңгімелеу, түсіндіру, әңгімелесу, сұрақ-жауап және көркем шығарманы оқуға</label>
+                <label class="option"><input type="radio" name="qa_13" value="E"> Кезекшілік, өзіне-өзі қызмет ету және тұрмыстық еңбекке</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Сөздік әдістер әңгімелеу, түсіндіру, әңгімелесу, сұрақ-жауап және көркем шығарманы оқу арқылы жүзеге асады.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">14. Көрнекілік әдістер мектеп жасына дейінгі балаға не береді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_14" value="A"> Дайын жауапты жаттап айтуға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_14" value="B"> Затты, құбылысты, әрекетті тікелей қабылдап, нақты түсінік қалыптастыруға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_14" value="C"> Балаларды оқу нәтижесі бойынша салыстыруға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_14" value="D"> Сабақ формасын мектеп үлгісіне жақындатуға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_14" value="E"> Баланың дербес әрекетін педагог түсіндіруімен алмастыруға мүмкіндік береді</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Көрнекілік әдістер балаға затты, құбылысты және әрекетті тікелей қабылдап, нақты түсінік қалыптастыруға көмектеседі.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">15. Практикалық әдістердің мәні қай жауапта дұрыс ашылған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_15" value="A"> Баланың педагог айтқан мәтінді өзгеріссіз қайталауында</label>
+                <label class="option"><input type="radio" name="qa_15" value="B"> Балалардың нәтижесін бірдей көрсеткішпен салыстыруда</label>
+                <label class="option"><input type="radio" name="qa_15" value="C"> Балаларды дайын нұсқаулық бойынша тыныш отырғызуда</label>
+                <label class="option"><input type="radio" name="qa_15" value="D"> Оқу мазмұнын тек ауызша түсіндіру арқылы жеткізуде</label>
+                <label class="option"><input type="radio" name="qa_15" value="E"> Баланың жаттығу, тәжірибе, құрастыру, еңбек және нақты әрекет арқылы меңгеруінде</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Практикалық әдістер білім мен дағдыны баланың нақты әрекеті арқылы меңгертуге бағытталады.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">16. Ойын әдісі мектепке дейінгі оқытуда қандай педагогикалық мүмкіндік береді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_16" value="A"> Баланың қызығушылығын сақтап, оқу міндетін табиғи әрекетпен байланыстыруға</label>
+                <label class="option"><input type="radio" name="qa_16" value="B"> Балалардың бос уақытын ғана ұйымдастыруға</label>
+                <label class="option"><input type="radio" name="qa_16" value="C"> Балаларды тәртіп сақтағаны үшін марапаттауға</label>
+                <label class="option"><input type="radio" name="qa_16" value="D"> Баланың нәтижесін жазбаша бақылауға</label>
+                <label class="option"><input type="radio" name="qa_16" value="E"> Оқу әрекетін ойыннан толық бөлуге</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Ойын әдісі баланың қызығушылығын сақтап, оқу міндетін табиғи әрекетпен байланыстыруға мүмкіндік береді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">17. Проблемалық әдіс мектеп жасына дейінгі баланың қандай қабілетін дамытады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_17" value="A"> Дайын жауапты есте сақтау және қайталау қабілетін</label>
+                <label class="option"><input type="radio" name="qa_17" value="B"> Сабақ кестесін орындау және тыныш отыру қабілетін</label>
+                <label class="option"><input type="radio" name="qa_17" value="C"> Сұрақ қою, болжам жасау, шешім іздеу және ой қорытындысын құру қабілетін</label>
+                <label class="option"><input type="radio" name="qa_17" value="D"> Басқа балалардың нәтижесімен салыстыру қабілетін</label>
+                <label class="option"><input type="radio" name="qa_17" value="E"> Педагогтің нұсқауын өзгеріссіз орындау қабілетін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Проблемалық әдіс баланың сұрақ қою, болжам жасау, шешім іздеу және ой қорытындысын құру қабілетін дамытады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">18. Тәрбие ұстанымы ұғымы қай жауапта дұрыс түсіндірілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_18" value="A"> Балалардың жас топтары бойынша апталық оқу жүктемесі</label>
+                <label class="option"><input type="radio" name="qa_18" value="B"> Педагогтің есеп беру құжатын толтыру тәртібі</label>
+                <label class="option"><input type="radio" name="qa_18" value="C"> Баланың оқу нәтижесін бағалау көрсеткіші</label>
+                <label class="option"><input type="radio" name="qa_18" value="D"> Тәрбиелеу мен оқыту процесін ұйымдастыруда басшылыққа алынатын негізгі педагогикалық талап</label>
+                <label class="option"><input type="radio" name="qa_18" value="E"> Сабақ кестесінің құрылымы мен күн тәртібінің реті</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Ұстаным — тәрбиелеу мен оқыту процесін ұйымдастыруда басшылыққа алынатын негізгі педагогикалық талап.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">19. Баланың жас ерекшелігін ескеру ұстанымы қандай талапқа негізделеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_19" value="A"> Барлық балаларға бірдей мазмұн мен бірдей әдіс қолдануға</label>
+                <label class="option"><input type="radio" name="qa_19" value="B"> Тапсырма, әдіс, қарым-қатынас және орта баланың жасына, даму деңгейіне және қабылдауына сай болуына</label>
+                <label class="option"><input type="radio" name="qa_19" value="C"> Балаларды нәтижесі бойынша тұрақты топтарға бөлуге</label>
+                <label class="option"><input type="radio" name="qa_19" value="D"> Дербес әрекетті қысқартып, түсіндіру уақытын көбейтуге</label>
+                <label class="option"><input type="radio" name="qa_19" value="E"> Мектеп пәндерін ерте жастан толық енгізуге</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Жас ерекшелігін ескеру тапсырма, әдіс, қарым-қатынас және ортаның баланың жасына, даму деңгейіне және қабылдауына сай болуын талап етеді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">20. Тәрбиенің өмірмен байланысы ұстанымы қай мазмұнмен сәйкес келеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_20" value="A"> Тәрбиені тек ұйымдастырылған сабақ уақытында жүргізумен</label>
+                <label class="option"><input type="radio" name="qa_20" value="B"> Балаларды дайын жауаптарды қайталауға бағыттаумен</label>
+                <label class="option"><input type="radio" name="qa_20" value="C"> Балалардың нәтижесін топтар арасында салыстырумен</label>
+                <label class="option"><input type="radio" name="qa_20" value="D"> Тәрбие мазмұнын баланың күнделікті тәжірибесінен бөлек қарастырумен</label>
+                <label class="option"><input type="radio" name="qa_20" value="E"> Тәрбиелік мазмұнды баланың күнделікті өмірі, отбасы, ойын, еңбек және қарым-қатынас жағдайларымен байланыстырумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Өмірмен байланыс ұстанымы тәрбиелік мазмұнды баланың күнделікті тәжірибесімен, отбасымен, ойынымен, еңбегімен және қарым-қатынасымен байланыстырады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">21. Жүйелілік ұстанымы тәрбиелеу мен оқытуда қандай ұйымдастыруды талап етеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_21" value="A"> Мақсат, міндет, мазмұн, әдіс және нәтиженің өзара байланыста, бірізді құрылуын</label>
+                <label class="option"><input type="radio" name="qa_21" value="B"> Баланың әрекетін бір ғана тапсырма түрімен шектеуді</label>
+                <label class="option"><input type="radio" name="qa_21" value="C"> Балалардың нәтижесін тұрақты салыстыруды</label>
+                <label class="option"><input type="radio" name="qa_21" value="D"> Оқу мазмұнын баланың қызығушылығынан бөлек жоспарлауды</label>
+                <label class="option"><input type="radio" name="qa_21" value="E"> Сабақ формасын бастауыш мектеп үлгісіне көшіруді</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Жүйелілік ұстанымы мақсат, міндет, мазмұн, әдіс және нәтиженің өзара байланыста әрі бірізді құрылуын талап етеді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">22. Жеке даралық ұстанымы педагогтен қандай әрекетті талап етеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_22" value="A"> Барлық балаға бірдей тапсырма және бірдей нәтиже талап етуді</label>
+                <label class="option"><input type="radio" name="qa_22" value="B"> Балаларды даму нәтижесіне қарай тұрақты бөлек топтарға бөлуді</label>
+                <label class="option"><input type="radio" name="qa_22" value="C"> Баланың қызығушылығын, қабілетін, мінезін, даму қарқынын және қажеттілігін ескеруді</label>
+                <label class="option"><input type="radio" name="qa_22" value="D"> Дербес әрекетті педагог нұсқауымен толық алмастыруды</label>
+                <label class="option"><input type="radio" name="qa_22" value="E"> Баланың жауабын дайын үлгімен сәйкестендіруді</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Жеке даралық ұстанымы баланың қызығушылығын, қабілетін, мінезін, даму қарқынын және қажеттілігін ескеруді талап етеді.</div>
+            </div>
+                        <div class="question" data-answer="D">
+              <div class="q-title">23. Белсенділік ұстанымы мектеп жасына дейінгі баланы оқытуда қалай көрінеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_23" value="A"> Баланың дайын жауапты есте сақтап, өзгеріссіз айтуында</label>
+                <label class="option"><input type="radio" name="qa_23" value="B"> Балалардың нәтижесін бірдей көрсеткішпен салыстыруында</label>
+                <label class="option"><input type="radio" name="qa_23" value="C"> Баланың әрекетін педагогтің толық бақылауына бағындыруында</label>
+                <label class="option"><input type="radio" name="qa_23" value="D"> Баланың сұрақ қоюы, бақылауы, тәжірибе жасауы, ойлануы және өз әрекеті арқылы меңгеруінде</label>
+                <label class="option"><input type="radio" name="qa_23" value="E"> Ұйымдастырылған іс-әрекетті мектеп сабағы формасына жақындатуында</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Белсенділік ұстанымы баланың таным процесіне сұрақ қою, бақылау, тәжірибе жасау, ойлану және әрекет арқылы қатысуын білдіреді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">24. Педагогикалық жағдаятты талдау педагогке қандай мүмкіндік береді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_24" value="A"> Балаларды үлгерімі бойынша тұрақты топтарға бөлуге</label>
+                <label class="option"><input type="radio" name="qa_24" value="B"> Баланың мінез-құлқы мен қажеттілігін түсініп, тәрбиелік шешімді дұрыс таңдауға</label>
+                <label class="option"><input type="radio" name="qa_24" value="C"> Сабақ уақытын ұзартып, тапсырма көлемін көбейтуге</label>
+                <label class="option"><input type="radio" name="qa_24" value="D"> Баланың дербес пікірін дайын жауаппен алмастыруға</label>
+                <label class="option"><input type="radio" name="qa_24" value="E"> Барлық балаларға бірдей талапты өзгеріссіз қолдануға</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Педагогикалық жағдаятты талдау баланың мінез-құлқын, қажеттілігін және жағдайдың себебін түсініп, дұрыс тәрбиелік шешім қабылдауға көмектеседі.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">25. Мектепке дейінгі ұйымдағы тәрбиеші қызметінің негізгі мазмұны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_25" value="A"> Балалардың оқу нәтижесін салыстырып, рейтинг жүргізу</label>
+                <label class="option"><input type="radio" name="qa_25" value="B"> Топтағы барлық әрекетті жазбаша тапсырмаға бағындыру</label>
+                <label class="option"><input type="radio" name="qa_25" value="C"> Балаларды мектеп пәндерін ерте меңгеруге бағыттау</label>
+                <label class="option"><input type="radio" name="qa_25" value="D"> Сабақ кестесін қатаң орындап, ойын әрекетін шектеу</label>
+                <label class="option"><input type="radio" name="qa_25" value="E"> Баланың дамуын қолдау, тәрбие мен оқытуды ұйымдастыру, қауіпсіз орта құру және отбасымен байланыс жасау</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Тәрбиеші баланың дамуын қолдайды, тәрбие мен оқытуды ұйымдастырады, қауіпсіз орта құрады және отбасымен ынтымақтастық жасайды.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">26. Баланың тұлғалық дамуын қолдау қандай педагогикалық әрекеттер арқылы жүзеге асады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_26" value="A"> Сенімді қарым-қатынас, дербес таңдау, бастаманы қолдау, эмоциясын тану және әлеуметтік тәжірибе жинақтау арқылы</label>
+                <label class="option"><input type="radio" name="qa_26" value="B"> Балаларды бірдей нәтижеге жеткізу үшін бір тапсырма берумен</label>
+                <label class="option"><input type="radio" name="qa_26" value="C"> Қателерін көпшілік алдында түзетіп, талапты күшейтумен</label>
+                <label class="option"><input type="radio" name="qa_26" value="D"> Баланың әрекетін педагогтің дайын жауабына сәйкестендірумен</label>
+                <label class="option"><input type="radio" name="qa_26" value="E"> Дербес ойынды қысқартып, түсіндіру уақытын көбейтумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Тұлғалық даму сенімді қарым-қатынас, дербес таңдау, бастаманы қолдау, эмоциясын тану және әлеуметтік тәжірибе арқылы қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">27. Мектепке дейінгі ұйымда балалар ұжымын қалыптастыру қандай мазмұнмен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_27" value="A"> Балалардың оқу нәтижесін бір-бірімен салыстырумен</label>
+                <label class="option"><input type="radio" name="qa_27" value="B"> Балаларды қабілетіне қарай тұрақты бөліп қоюмен</label>
+                <label class="option"><input type="radio" name="qa_27" value="C"> Бірлескен ойын, ортақ әрекет, қарым-қатынас, өзара көмек және топтық жауапкершілікпен</label>
+                <label class="option"><input type="radio" name="qa_27" value="D"> Балалардың дербес таңдауын шектеумен</label>
+                <label class="option"><input type="radio" name="qa_27" value="E"> Топтағы барлық әрекетті педагог нұсқауына толық бағындырумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Балалар ұжымы бірлескен ойын, ортақ әрекет, қарым-қатынас, өзара көмек және топтық жауапкершілік арқылы қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">28. Баланың дербестігін дамыту педагогикалық процесте қандай әрекетпен қамтамасыз етіледі?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_28" value="A"> Баланың әрекетін педагог толық орындап беруімен</label>
+                <label class="option"><input type="radio" name="qa_28" value="B"> Дайын жауапты қайталау және үлгі бойынша айтуымен</label>
+                <label class="option"><input type="radio" name="qa_28" value="C"> Баланың таңдауын бір тапсырмамен шектеумен</label>
+                <label class="option"><input type="radio" name="qa_28" value="D"> Таңдау жасау, өз әрекетін бастау, шешім қабылдау және нәтижесін көру мүмкіндігімен</label>
+                <label class="option"><input type="radio" name="qa_28" value="E"> Барлық балаға бірдей әрекет түрін міндеттеумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Дербестік баланың таңдау жасауына, өз әрекетін бастауына, шешім қабылдауына және нәтижесін көруіне жағдай жасалғанда дамиды.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">29. Мектепке дейінгі ұйымдағы күн тәртібінің педагогикалық маңызы қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_29" value="A"> Балаларды сабақ кестесіне толық бағындырып, ойын әрекетін азайту</label>
+                <label class="option"><input type="radio" name="qa_29" value="B"> Баланың денсаулығын, белсенділігін, тынығуын, тамақтануын және әрекеттердің үйлесімді ауысуын қамтамасыз ету</label>
+                <label class="option"><input type="radio" name="qa_29" value="C"> Балалардың оқу нәтижесін күн сайын салыстыруға жағдай жасау</label>
+                <label class="option"><input type="radio" name="qa_29" value="D"> Ұйымдастырылған іс-әрекетті мектеп сабағы формасына көшіру</label>
+                <label class="option"><input type="radio" name="qa_29" value="E"> Балалардың дербес әрекетін шектеу және педагог бақылауын күшейту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Күн тәртібі баланың денсаулығын, белсенділігін, тынығуын, тамақтануын және әрекеттердің үйлесімді ауысуын қамтамасыз етеді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">30. Андабекова кітабындағы педагогикалық процестің жалпы бағыты қай жауапта дұрыс жинақталған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_30" value="A"> Балаларды пәндік білімді ерте меңгеруге және жазбаша тапсырмаларға дайындау</label>
+                <label class="option"><input type="radio" name="qa_30" value="B"> Оқу нәтижесін салыстырып, балаларды деңгейлік топтарға бөлу</label>
+                <label class="option"><input type="radio" name="qa_30" value="C"> Сабақ формасын мектепке жақындатып, ойын әрекетін қосымша ету</label>
+                <label class="option"><input type="radio" name="qa_30" value="D"> Баланың әрекетін педагог нұсқауымен шектеп, дайын жауапты меңгерту</label>
+                <label class="option"><input type="radio" name="qa_30" value="E"> Баланың жас ерекшелігіне сай тәрбие, оқыту, дамыту және әлеуметтендіруді тұтас ұйымдастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Кітаптағы негізгі бағыт — баланың жас ерекшелігіне сай тәрбие, оқыту, дамыту және әлеуметтендіруді тұтас ұйымдастыру.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">31. Мектеп жасына дейінгі баланың танымдық қызығушылығын дамытуда педагог қандай жағдай жасайды?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_31" value="A"> Бақылау, салыстыру, сұрақ қою, тәжірибе жасау және қорытындылауға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_31" value="B"> Дайын жауапты есте сақтауға және қайталауға бағыттайды</label>
+                <label class="option"><input type="radio" name="qa_31" value="C"> Балалардың нәтижесін бірдей өлшеммен салыстырады</label>
+                <label class="option"><input type="radio" name="qa_31" value="D"> Танымдық әрекетті жазбаша тапсырмамен шектейді</label>
+                <label class="option"><input type="radio" name="qa_31" value="E"> Баланың сұрағын педагог жоспарына сәйкес болмаса тоқтатады</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Танымдық қызығушылық бақылау, салыстыру, сұрақ қою, тәжірибе жасау және қорытындылау арқылы дамиды.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">32. Баланың сөйлеуін дамыту мектепке дейінгі педагогикада қандай әрекеттермен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_32" value="A"> Қимыл жаттығулары, дене сапалары және шынығу әрекеттерімен</label>
+                <label class="option"><input type="radio" name="qa_32" value="B"> Сурет салу, музыка тыңдау және мүсіндеу әрекеттерімен</label>
+                <label class="option"><input type="radio" name="qa_32" value="C"> Тыңдау, түсіну, сөздік қорды байыту, диалог, әңгімелеу және байланыстырып сөйлеумен</label>
+                <label class="option"><input type="radio" name="qa_32" value="D"> Санау, салыстыру, кеңістікті бағдарлау және құрастырумен</label>
+                <label class="option"><input type="radio" name="qa_32" value="E"> Өзіне-өзі қызмет ету және кезекшілікпен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Сөйлеуді дамыту тыңдау, түсіну, сөздік қорды байыту, диалог, әңгімелеу және байланыстырып сөйлеу арқылы жүзеге асады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">33. Мектеп жасына дейінгі баланың шығармашылық қабілетін дамыту қандай мазмұнмен сипатталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_33" value="A"> Баланың оқу нәтижесін бірдей тапсырма арқылы бағалауымен</label>
+                <label class="option"><input type="radio" name="qa_33" value="B"> Дайын үлгіні өзгеріссіз қайталауымен</label>
+                <label class="option"><input type="radio" name="qa_33" value="C"> Баланың әрекетін педагогтің нақты нұсқауымен шектеуімен</label>
+                <label class="option"><input type="radio" name="qa_33" value="D"> Сабақ кестесін сақтап, тыныш отыруымен</label>
+                <label class="option"><input type="radio" name="qa_33" value="E"> Қиял, өзіндік ой, материалмен тәжірибе жасау, көркем бейнелеу және өнерге қызығушылық арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Шығармашылық қабілет қиял, өзіндік ой, материалмен тәжірибе жасау, көркем бейнелеу және өнерге қызығушылық арқылы дамиды.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">34. Баланың мінез-құлық мәдениетін қалыптастыруда қандай педагогикалық тәсіл маңызды?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_34" value="A"> Қателерін көпшілік алдында түзетіп, талапты күшейту</label>
+                <label class="option"><input type="radio" name="qa_34" value="B"> Үлгі көрсету, түсіндіру, жаттықтыру, мадақтау және күнделікті қарым-қатынаста бекіту</label>
+                <label class="option"><input type="radio" name="qa_34" value="C"> Балаларды мінез-құлқына қарай тұрақты бөлек топтарға бөлу</label>
+                <label class="option"><input type="radio" name="qa_34" value="D"> Әдеп нормаларын жазбаша жаттатумен шектеу</label>
+                <label class="option"><input type="radio" name="qa_34" value="E"> Баланың пікірін ескермей, дайын ережені қайталату</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Мінез-құлық мәдениеті үлгі көрсету, түсіндіру, жаттықтыру, мадақтау және күнделікті қарым-қатынаста бекіту арқылы қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">35. Баланың ойын әрекетін педагогикалық тұрғыдан басқару нені білдіреді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_35" value="A"> Ойынды тәртіп сақтаған балаларға марапат ретінде ұсыну</label>
+                <label class="option"><input type="radio" name="qa_35" value="B"> Ойынды оқу міндетінен бөлек көңіл көтеру әрекеті ретінде қалдыру</label>
+                <label class="option"><input type="radio" name="qa_35" value="C"> Баланың ойын мазмұнын толық педагогтің өзі белгілеп беруі</label>
+                <label class="option"><input type="radio" name="qa_35" value="D"> Ойынға жағдай жасау, мазмұнын байыту, рөлдік қарым-қатынасты қолдау және балалар бастамасын дамыту</label>
+                <label class="option"><input type="radio" name="qa_35" value="E"> Ойынды жазбаша тапсырма орындауға дайындық ретінде шектеу</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Ойын әрекетін педагогикалық басқару ойынға жағдай жасау, мазмұнын байыту, рөлдік қарым-қатынасты қолдау және балалар бастамасын дамыту арқылы іске асады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">36. Сюжеттік-рөлдік ойын баланың қандай дамуына ерекше әсер етеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_36" value="A"> Әлеуметтік рөлдерді меңгеруіне, қарым-қатынас жасауына, қиялына және мінез-құлық нормаларын игеруіне</label>
+                <label class="option"><input type="radio" name="qa_36" value="B"> Санау, кеңістік, өлшем және пішін түсініктерін қалыптастыруына</label>
+                <label class="option"><input type="radio" name="qa_36" value="C"> Негізгі қимылдарын, жылдамдығын және төзімділігін дамытуына</label>
+                <label class="option"><input type="radio" name="qa_36" value="D"> Еңбек құралдарын қолдану және кезекшілік міндетін орындауына</label>
+                <label class="option"><input type="radio" name="qa_36" value="E"> Табиғат құбылыстарын бақылау және өсімдіктерге күтім жасауына</label>
+              </div>
+              
+              <div class="explanation">Дұрыс жауап: A. Сюжеттік-рөлдік ойын баланың әлеуметтік рөлдерді меңгеруіне, қарым-қатынасына, қиялына және мінез-құлық нормаларын игеруіне ықпал етеді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">37. Дидактикалық ойынның оқытудағы негізгі қызметі қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_37" value="A"> Балалардың бос уақытын ұйымдастыру және тынығуын қамтамасыз ету</label>
+                <label class="option"><input type="radio" name="qa_37" value="B"> Балалардың оқу нәтижесін рейтингке шығару</label>
+                <label class="option"><input type="radio" name="qa_37" value="C"> Ойын міндеті арқылы танымдық мазмұнды меңгерту, ойлау мен зейінді дамыту</label>
+                <label class="option"><input type="radio" name="qa_37" value="D"> Балаларды тәртіп сақтағаны үшін ынталандыру</label>
+                <label class="option"><input type="radio" name="qa_37" value="E"> Дербес әрекетті азайтып, педагог түсіндіруін көбейту</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Дидактикалық ойын танымдық мазмұнды меңгертуге, ойлау мен зейінді дамытуға бағытталады.</div>
+            </div>
+                        <div class="question" data-answer="E">
+              <div class="q-title">43. Мектепке дайындықты қалыптастыруда педагог қандай бағыттарды қатар дамытады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_43" value="A"> Жазбаша тапсырма, пәндік білім, бақылау жұмысы және рейтинг нәтижесі</label>
+                <label class="option"><input type="radio" name="qa_43" value="B"> Сабақ кестесі, тыныш отыру, дайын жауап және мектеп тәртібі</label>
+                <label class="option"><input type="radio" name="qa_43" value="C"> Бастауыш пәндері, үй тапсырмасы, бағалау және емтихан дайындығы</label>
+                <label class="option"><input type="radio" name="qa_43" value="D"> Оқу жылдамдығы, жазу дағдысы, пәндік нәтиже және салыстыру көрсеткіші</label>
+                <label class="option"><input type="radio" name="qa_43" value="E"> Физикалық, психологиялық, әлеуметтік, эмоционалдық және танымдық дайындық</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Мектепке дайындық физикалық, психологиялық, әлеуметтік, эмоционалдық және танымдық бағыттардың үйлесімді қалыптасуымен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">44. Мектепалды кезеңде оқу әрекетіне дайындық қалай қалыптасады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_44" value="A"> Бастауыш мектеп бағдарламасын толық меңгерту арқылы</label>
+                <label class="option"><input type="radio" name="qa_44" value="B"> Тыңдау, тапсырманы түсіну, әрекетті жоспарлау, зейінді сақтау және нәтижеге ұмтылу дағдылары арқылы</label>
+                <label class="option"><input type="radio" name="qa_44" value="C"> Балаларды оқу нәтижесі бойынша тұрақты топтарға бөлу арқылы</label>
+                <label class="option"><input type="radio" name="qa_44" value="D"> Жазбаша бақылау жұмыстарын жиі өткізу арқылы</label>
+                <label class="option"><input type="radio" name="qa_44" value="E"> Ойын әрекетін оқу әрекетінен толық бөліп тастау арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Оқу әрекетіне дайындық тыңдау, тапсырманы түсіну, әрекетті жоспарлау, зейінді сақтау және нәтижеге ұмтылу арқылы қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">45. Педагогикалық диагностика нәтижесін педагог қалай қолдануы тиіс?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_45" value="A"> Балаларды үлгерім деңгейі бойынша тұрақты бөлу үшін</label>
+                <label class="option"><input type="radio" name="qa_45" value="B"> Баланың қателерін көпшілік алдында көрсету үшін</label>
+                <label class="option"><input type="radio" name="qa_45" value="C"> Оқу жүктемесін механикалық көбейту үшін</label>
+                <label class="option"><input type="radio" name="qa_45" value="D"> Баланың даму ерекшелігін ескеріп, келесі тәрбиелік және оқытушылық жұмысты жоспарлау үшін</label>
+                <label class="option"><input type="radio" name="qa_45" value="E"> Баланың нәтижесін басқа балалармен салыстыру үшін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Диагностика нәтижесі баланың даму ерекшелігін ескеріп, келесі тәрбиелік және оқытушылық жұмысты жоспарлауға қолданылады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">46. Педагогикалық бақылау баланың табиғи әрекетінде жүргізілгенде қандай артықшылық береді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_46" value="A"> Баланың шынайы қызығушылығын, қарым-қатынасын, әрекет таңдауын және даму динамикасын байқауға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_46" value="B"> Балаларды бірдей тапсырма арқылы салыстыруға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_46" value="C"> Сабақ уақытын ұлғайту қажеттігін анықтауға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_46" value="D"> Баланың дайын жауапты қаншалықты жаттағанын тексеруге мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_46" value="E"> Балаларды деңгейлік топқа бөлуді жеңілдетеді</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Табиғи әрекеттегі бақылау баланың шынайы қызығушылығын, қарым-қатынасын, әрекет таңдауын және даму динамикасын көруге мүмкіндік береді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">47. Педагогикалық процесте қауіпсіздік пен эмоционалдық жайлылық не үшін қажет?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_47" value="A"> Балалардың қимыл әрекетін шектеу үшін</label>
+                <label class="option"><input type="radio" name="qa_47" value="B"> Материалдарды балалардан алыс сақтау үшін</label>
+                <label class="option"><input type="radio" name="qa_47" value="C"> Баланың белсенді қатысуы, сенімді қарым-қатынасы, дербес әрекеті және дамуы үшін</label>
+                <label class="option"><input type="radio" name="qa_47" value="D"> Сабақ формасын мектеп үлгісіне көшіру үшін</label>
+                <label class="option"><input type="radio" name="qa_47" value="E"> Балалардың нәтижесін бірдей деңгейге жеткізу үшін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Қауіпсіздік пен эмоционалдық жайлылық баланың белсенді қатысуына, сенімді қарым-қатынасына, дербес әрекетіне және дамуына жағдай жасайды.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">48. Андабекова еңбегіндегі педагогикалық жағдаяттардың оқу құралына енгізілуі қандай мақсатпен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_48" value="A"> Балалардың оқу нәтижесін салыстыруға арналған тапсырмалар жасау үшін</label>
+                <label class="option"><input type="radio" name="qa_48" value="B"> Сабақ кестесін бастауыш мектепке жақындату үшін</label>
+                <label class="option"><input type="radio" name="qa_48" value="C"> Балаларды дайын жауапты қайталауға үйрету үшін</label>
+                <label class="option"><input type="radio" name="qa_48" value="D"> Педагогикалық құжаттарды толтыру тәртібін көрсету үшін</label>
+                <label class="option"><input type="radio" name="qa_48" value="E"> Болашақ педагогтің нақты жағдайда талдау жасап, педагогикалық шешім қабылдау қабілетін дамыту үшін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Педагогикалық жағдаяттар болашақ педагогтің нақты жағдайды талдап, дұрыс педагогикалық шешім қабылдау қабілетін дамытуға көмектеседі.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">49. Андабекова кітабындағы тірек-сызбалар қандай дидактикалық қызмет атқарады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_49" value="A"> Балалардың нәтижесін рейтинг арқылы көрсетуге қызмет етеді</label>
+                <label class="option"><input type="radio" name="qa_49" value="B"> Теориялық материалды жүйелеуге, негізгі байланыстарды көруге және мазмұнды жинақтап меңгеруге көмектеседі</label>
+                <label class="option"><input type="radio" name="qa_49" value="C"> Оқу жүктемесін көбейтуге және тапсырма санын арттыруға мүмкіндік береді</label>
+                <label class="option"><input type="radio" name="qa_49" value="D"> Балаларды жас ерекшелігі бойынша топқа бөлуге арналған</label>
+                <label class="option"><input type="radio" name="qa_49" value="E"> Педагогикалық процесті тек жазбаша жұмысқа негіздеуге көмектеседі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Тірек-сызбалар теориялық материалды жүйелеуге, негізгі байланыстарды көруге және мазмұнды жинақтап меңгеруге көмектеседі.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">50. Андабекова кітабы бойынша мектепке дейінгі педагогиканың қорытынды мәні қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qa_50" value="A"> Балаларды бастауыш мектеп пәндерін толық оқуға дайындау жүйесі</label>
+                <label class="option"><input type="radio" name="qa_50" value="B"> Балалардың оқу нәтижесін бағалау және рейтинг жасау әдістемесі</label>
+                <label class="option"><input type="radio" name="qa_50" value="C"> Сабақ формасын мектеп үлгісіне көшіру және жазбаша тапсырманы көбейту жүйесі</label>
+                <label class="option"><input type="radio" name="qa_50" value="D"> Баланың жас және жеке ерекшелігін ескеріп, тәрбиелеу, оқыту, дамыту және әлеуметтендіруді ғылыми-әдістемелік ұйымдастыру</label>
+                <label class="option"><input type="radio" name="qa_50" value="E"> Балалардың тәртібін бақылау және дербес әрекетін шектеу тәсілдері</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Кітаптың қорытынды мазмұны баланың жас және жеке ерекшелігін ескеріп, тәрбиелеу, оқыту, дамыту және әлеуметтендіруді ғылыми-әдістемелік ұйымдастырумен байланысты.</div>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn" onclick="checkTest('testAndabekova')">Жауаптарды тексеру</button>
+              <button class="btn secondary" onclick="resetTest('testAndabekova')">Қайта тапсыру</button>
+            </div>
+            <div class="score" id="score-testAndabekova"></div>
+          </div>
+        </article>
+      </section>
+                  <section class="book-section" id="book-zhienbaeva">
+        <div class="book-title-card">
+          <h2>3-кітап. Жиенбаева С.Н. және авторлар “Мектепке дейінгі педагогика”</h2>
+          <p>
+            Бұл бөлім мектепке дейінгі педагогика ғылымының мазмұнын, баланың даму ерекшеліктерін,
+            тәрбие бағыттарын, мектепке дейінгі дидактиканы, ойын әрекетін, заттық-дамытушы ортаны,
+            отбасы және мектепке дейінгі ұйым арасындағы байланысты қамтиды.
+          </p>
+
+          <div class="info-grid">
+            <div class="info">
+              <strong>Кітап бағыты</strong>
+              <span>Мектепке дейінгі педагогиканың толықтырылған теориялық жүйесі</span>
+            </div>
+            <div class="info">
+              <strong>Негізгі мазмұн</strong>
+              <span>Ғылым, тәрбие, оқыту, ойын, орта, отбасы, мектепке дайындық</span>
+            </div>
+            <div class="info">
+              <strong>Дайындық форматы</strong>
+              <span>Теориялық блоктар, негізгі ұғымдар, тест тапсырмалары</span>
+            </div>
+          </div>
+        </div>
+
+        <article class="card">
+          <h3>Қысқаша теория</h3>
+
+          <div class="list">
+            <div class="list-item">
+              <div class="num">1</div>
+              <div>
+                <strong>Мектепке дейінгі педагогика ғылымы</strong>
+                <span>Баланың мектепке дейінгі кезеңдегі тәрбиесі, оқуы, дамуы және әлеуметтенуі туралы ғылыми білімдер жүйесі.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">2</div>
+              <div>
+                <strong>Баланың даму ерекшелігі</strong>
+                <span>Мектепке дейінгі жаста дене, таным, сөйлеу, эмоция, қарым-қатынас және дербестік сапалары қарқынды қалыптасады.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">3</div>
+              <div>
+                <strong>Тәрбие бағыттары</strong>
+                <span>Дене, ақыл-ой, адамгершілік, эстетикалық, еңбек, экологиялық және әлеуметтік тәрбие баланың тұлғалық дамуын қамтамасыз етеді.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">4</div>
+              <div>
+                <strong>Дидактика</strong>
+                <span>Мектеп жасына дейінгі балаларды оқытудың мақсатын, мазмұнын, қағидаларын, әдістерін және ұйымдастыру формаларын қарастырады.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">5</div>
+              <div>
+                <strong>Ойын және орта</strong>
+                <span>Ойын жетекші іс-әрекет ретінде баланың дамуына ықпал етеді, ал заттық-дамытушы орта оның еркін әрекетін, таңдауын және бастамасын қолдайды.</span>
+              </div>
+            </div>
+
+            <div class="list-item">
+              <div class="num">6</div>
+              <div>
+                <strong>Отбасы және сабақтастық</strong>
+                <span>Баланың дамуы отбасы мен мектепке дейінгі ұйымның ынтымақтастығы, мектепке дайындық және бастауыш біліммен сабақтастық арқылы нығаяды.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Негізгі ұғымдар</h3>
+
+          <div class="term-grid">
+            <div class="term">
+              <strong>Мектепке дейінгі дидактика</strong>
+              <span>Мектеп жасына дейінгі балаларды оқытудың мазмұны, қағидалары, әдістері және формалары туралы педагогикалық білім саласы.</span>
+            </div>
+
+            <div class="term">
+              <strong>Жас ерекшелік</strong>
+              <span>Баланың белгілі жас кезеңіне тән дене, психикалық, танымдық, эмоциялық және әлеуметтік даму сипаттары.</span>
+            </div>
+
+            <div class="term">
+              <strong>Әлеуметтену</strong>
+              <span>Баланың қоғамдық қатынастарға енуі, әлеуметтік нормаларды меңгеруі және қарым-қатынас тәжірибесін жинақтауы.</span>
+            </div>
+
+            <div class="term">
+              <strong>Дидактикалық ойын</strong>
+              <span>Ойын міндеті мен оқу міндетін біріктіріп, баланың танымдық белсенділігін дамытатын ойын түрі.</span>
+            </div>
+
+            <div class="term">
+              <strong>Педагогикалық қолдау</strong>
+              <span>Баланың жеке даму мүмкіндігін ескеріп, оның белсенділігіне, дербестігіне және табысты әрекетіне жағдай жасау.</span>
+            </div>
+
+            <div class="term">
+              <strong>Сабақтастық</strong>
+              <span>Мектепке дейінгі тәрбие мен оқыту мазмұнының бастауыш білім беру мазмұнымен үйлесімді жалғасуы.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Жиенбаева және авторлар бойынша тест</h3>
+          <div class="test-box" data-test="testZhienbaeva">
+
+            <div class="question" data-answer="B">
+              <div class="q-title">1. Мектепке дейінгі педагогика ғылымының негізгі зерттеу нысаны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_1" value="A"> Бастауыш сынып оқушыларының пәндік үлгерімін бағалау жүйесі</label>
+                <label class="option"><input type="radio" name="qj_1" value="B"> Мектеп жасына дейінгі баланы тәрбиелеу, оқыту, дамыту және әлеуметтендіру процесі</label>
+                <label class="option"><input type="radio" name="qj_1" value="C"> Педагогтердің кәсіби біліктілігін аттестаттау тәртібі</label>
+                <label class="option"><input type="radio" name="qj_1" value="D"> Жалпы білім беретін мектептегі оқу пәндерінің мазмұны</label>
+                <label class="option"><input type="radio" name="qj_1" value="E"> Мектепалды сыныптағы жазбаша бақылау жұмыстарының жүйесі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Мектепке дейінгі педагогика мектеп жасына дейінгі баланы тәрбиелеу, оқыту, дамыту және әлеуметтендіру процесін зерттейді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">2. Мектепке дейінгі педагогиканың ғылыми міндеті қай жауапта нақты көрсетілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_2" value="A"> Балаларды бастауыш мектеп пәндерін алдын ала толық меңгерту</label>
+                <label class="option"><input type="radio" name="qj_2" value="B"> Балалардың оқу нәтижесін бірдей көрсеткішпен салыстыру</label>
+                <label class="option"><input type="radio" name="qj_2" value="C"> Топтағы барлық әрекетті жазбаша тапсырмаға бағындыру</label>
+                <label class="option"><input type="radio" name="qj_2" value="D"> Баланың дамуының заңдылықтарын анықтап, тәрбие мен оқытудың тиімді мазмұнын негіздеу</label>
+                <label class="option"><input type="radio" name="qj_2" value="E"> Сабақ кестесін бастауыш мектеп үлгісіне сәйкестендіру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Ғылыми міндет баланың дамуының заңдылықтарын анықтау және тәрбие мен оқытудың тиімді мазмұнын негіздеумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">3. Мектепке дейінгі кезеңдегі даму ерекшелігі қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_3" value="A"> Дене, сөйлеу, таным, эмоция, қарым-қатынас және дербестік сапаларының қарқынды қалыптасуы</label>
+                <label class="option"><input type="radio" name="qj_3" value="B"> Пәндік білімді толық меңгеру және жазбаша бақылауға дайын болу</label>
+                <label class="option"><input type="radio" name="qj_3" value="C"> Балаларды оқу үлгерімі бойынша тұрақты деңгейлік топтарға бөлу</label>
+                <label class="option"><input type="radio" name="qj_3" value="D"> Баланың ойын әрекетін азайтып, оқу әрекетін негізгі ету</label>
+                <label class="option"><input type="radio" name="qj_3" value="E"> Сабақ кестесін орындау және дайын жауапты қайталау</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Мектепке дейінгі кезеңде баланың дене, сөйлеу, таным, эмоция, қарым-қатынас және дербестік сапалары қарқынды қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">4. Баланың тұлғалық дамуы мектепке дейінгі педагогикада қандай мазмұнмен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_4" value="A"> Оқу тапсырмасын жылдам орындау және дайын жауап айту қабілетімен</label>
+                <label class="option"><input type="radio" name="qj_4" value="B"> Баланың нәтижесін басқа балалармен салыстыру көрсеткішімен</label>
+                <label class="option"><input type="radio" name="qj_4" value="C"> Өзіндік сана, дербестік, қарым-қатынас, мінез-құлық және құндылық сапаларының қалыптасуымен</label>
+                <label class="option"><input type="radio" name="qj_4" value="D"> Мектеп пәндерін алдын ала меңгеру және жазбаша жұмысқа дайын болумен</label>
+                <label class="option"><input type="radio" name="qj_4" value="E"> Топтағы әрекеттерді педагог нұсқауымен ғана орындаумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Тұлғалық даму өзіндік сана, дербестік, қарым-қатынас, мінез-құлық және құндылық сапаларының қалыптасуымен сипатталады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">5. Әлеуметтену процесінің мектепке дейінгі кезеңдегі мазмұны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_5" value="A"> Баланың жазбаша тапсырманы орындау тәжірибесін жинақтауы</label>
+                <label class="option"><input type="radio" name="qj_5" value="B"> Баланың оқу нәтижесін топтағы балалармен салыстыруы</label>
+                <label class="option"><input type="radio" name="qj_5" value="C"> Баланың бастауыш пәндік білімді алдын ала меңгеруі</label>
+                <label class="option"><input type="radio" name="qj_5" value="D"> Баланың дербес ойын әрекетін шектеп, оқу әрекетін күшейтуі</label>
+                <label class="option"><input type="radio" name="qj_5" value="E"> Қоғамдық қатынастарға енуі, әлеуметтік нормаларды меңгеруі және қарым-қатынас тәжірибесін жинақтауы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Әлеуметтену баланың қоғамдық қатынастарға енуі, әлеуметтік нормаларды меңгеруі және қарым-қатынас тәжірибесін жинақтауымен байланысты.</div>
+            </div>
+                        <div class="question" data-answer="B">
+              <div class="q-title">6. Дене тәрбиесінің мектепке дейінгі жастағы басты педагогикалық мәні неде?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_6" value="A"> Баланың сөйлеу мәдениетін және сөздік қорын дамытуда</label>
+                <label class="option"><input type="radio" name="qj_6" value="B"> Денсаулықты нығайтуда, қимыл белсенділігін арттыруда және мәдени-гигиеналық дағдыларды қалыптастыруда</label>
+                <label class="option"><input type="radio" name="qj_6" value="C"> Баланың көркемдік талғамы мен шығармашылық қиялын дамытуда</label>
+                <label class="option"><input type="radio" name="qj_6" value="D"> Баланың әлеуметтік рөлдерді ойын арқылы бейнелеуінде</label>
+                <label class="option"><input type="radio" name="qj_6" value="E"> Баланың заттардың қасиетін салыстыру және топтастыруында</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Дене тәрбиесі денсаулықты нығайту, қимыл белсенділігін арттыру және мәдени-гигиеналық дағдыларды қалыптастырумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">7. Ақыл-ой тәрбиесі баланың қандай танымдық процестерін дамытуға бағытталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_7" value="A"> Қимыл үйлесімі, төзімділік, ептілік және жылдамдық</label>
+                <label class="option"><input type="radio" name="qj_7" value="B"> Мейірімділік, жауапкершілік, сыйластық және ұжымшылдық</label>
+                <label class="option"><input type="radio" name="qj_7" value="C"> Көркем талғам, эстетикалық сезім және музыкалық қабылдау</label>
+                <label class="option"><input type="radio" name="qj_7" value="D"> Қабылдау, зейін, ес, ойлау, қиял және танымдық қызығушылық</label>
+                <label class="option"><input type="radio" name="qj_7" value="E"> Өзіне-өзі қызмет ету, кезекшілік және еңбекке жауапкершілік</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Ақыл-ой тәрбиесі қабылдау, зейін, ес, ойлау, қиял және танымдық қызығушылықты дамытуға бағытталады.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">8. Адамгершілік тәрбиесінің нәтижесі мектеп жасына дейінгі балада қандай сапалар арқылы көрінеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_8" value="A"> Мейірімділік, жауапкершілік, сыйластық, әділдік, жанашырлық және мінез-құлық мәдениеті</label>
+                <label class="option"><input type="radio" name="qj_8" value="B"> Дене сапалары, қимыл белсенділігі және шынығу дағдылары</label>
+                <label class="option"><input type="radio" name="qj_8" value="C"> Санау, салыстыру, топтастыру және кеңістікте бағдарлау</label>
+                <label class="option"><input type="radio" name="qj_8" value="D"> Музыка тыңдау, сурет салу, мүсіндеу және жапсыру</label>
+                <label class="option"><input type="radio" name="qj_8" value="E"> Табиғат құбылыстарын бақылау және өсімдіктерге күтім жасау</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Адамгершілік тәрбиесі мейірімділік, жауапкершілік, сыйластық, әділдік, жанашырлық және мінез-құлық мәдениеті арқылы көрінеді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">9. Эстетикалық тәрбиеде баланың көркемдік дамуы қандай әрекеттермен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_9" value="A"> Қимылды ойын, спорттық жаттығу және шынықтыру әрекеттерімен</label>
+                <label class="option"><input type="radio" name="qj_9" value="B"> Санау, салыстыру, кеңістікке бағдарлау және құрастырумен</label>
+                <label class="option"><input type="radio" name="qj_9" value="C"> Өнерді қабылдау, музыка тыңдау, бейнелеу, мүсіндеу, жапсыру және шығармашылық әрекетпен</label>
+                <label class="option"><input type="radio" name="qj_9" value="D"> Кезекшілік, өзіне-өзі қызмет ету және тұрмыстық еңбекпен</label>
+                <label class="option"><input type="radio" name="qj_9" value="E"> Әлеуметтік рөлдерді меңгеру және мінез-құлық нормаларын қабылдаумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Эстетикалық тәрбие өнерді қабылдау, музыка тыңдау, бейнелеу, мүсіндеу, жапсыру және шығармашылық әрекет арқылы дамиды.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">10. Еңбек тәрбиесінің мектепке дейінгі ұйымдағы негізгі формалары қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_10" value="A"> Санау, салыстыру, топтастыру және кеңістіктік бағдарлау</label>
+                <label class="option"><input type="radio" name="qj_10" value="B"> Әңгімелеу, сұрақ-жауап, көркем мәтінді оқу және диалог</label>
+                <label class="option"><input type="radio" name="qj_10" value="C"> Музыка тыңдау, ән айту, сурет салу және мүсіндеу</label>
+                <label class="option"><input type="radio" name="qj_10" value="D"> Қимылды ойын, негізгі қозғалыс және шынықтыру</label>
+                <label class="option"><input type="radio" name="qj_10" value="E"> Өзіне-өзі қызмет ету, шаруашылық-тұрмыстық еңбек, табиғаттағы еңбек және кезекшілік</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Еңбек тәрбиесі өзіне-өзі қызмет ету, шаруашылық-тұрмыстық еңбек, табиғаттағы еңбек және кезекшілік формаларында ұйымдастырылады.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">11. Экологиялық тәрбиенің мектеп жасына дейінгі балаларға арналған мазмұны қайсы?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_11" value="A"> Баланың дыбыстық мәдениеті мен сөздік қорын дамыту</label>
+                <label class="option"><input type="radio" name="qj_11" value="B"> Табиғатты бақылау, тірі және өлі табиғат туралы түсінік, табиғатты қорғау және ұқыпты қатынас қалыптастыру</label>
+                <label class="option"><input type="radio" name="qj_11" value="C"> Баланың қимыл белсенділігі мен дене сапаларын арттыру</label>
+                <label class="option"><input type="radio" name="qj_11" value="D"> Баланың көркем талғамы мен шығармашылық әрекетін дамыту</label>
+                <label class="option"><input type="radio" name="qj_11" value="E"> Баланың тұрмыстық еңбек пен кезекшілік дағдыларын қалыптастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Экологиялық тәрбие табиғатты бақылау, тірі және өлі табиғат туралы түсінік, табиғатты қорғау және ұқыпты қатынас қалыптастырумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">12. Мектепке дейінгі дидактика қандай мәселелерді қарастырады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_12" value="A"> Педагогтердің аттестаттау талаптарын және кәсіби санаттарын</label>
+                <label class="option"><input type="radio" name="qj_12" value="B"> Балалардың оқу нәтижесін рейтинг арқылы салыстыруды</label>
+                <label class="option"><input type="radio" name="qj_12" value="C"> Мектепалды сыныптағы жазбаша бақылау тапсырмаларын</label>
+                <label class="option"><input type="radio" name="qj_12" value="D"> Мектеп жасына дейінгі балаларды оқытудың мақсаты, мазмұны, қағидалары, әдістері және формаларын</label>
+                <label class="option"><input type="radio" name="qj_12" value="E"> Бастауыш мектеп пәндерін ерте меңгерту тәртібін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Мектепке дейінгі дидактика балаларды оқытудың мақсатын, мазмұнын, қағидаларын, әдістерін және формаларын қарастырады.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">13. Мектепке дейінгі оқытудағы көрнекілік қағидасы қандай мазмұнмен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_13" value="A"> Баланың затты, құбылысты және әрекетті тікелей қабылдауы, бақылауы және нақты тәжірибе арқылы түсінуі</label>
+                <label class="option"><input type="radio" name="qj_13" value="B"> Баланың дайын жауапты есте сақтап, өзгеріссіз қайталауы</label>
+                <label class="option"><input type="radio" name="qj_13" value="C"> Балалардың нәтижесін бірдей өлшеммен салыстыруы</label>
+                <label class="option"><input type="radio" name="qj_13" value="D"> Оқу тапсырмасын жазбаша түрде орындауы</label>
+                <label class="option"><input type="radio" name="qj_13" value="E"> Сабақ формасын бастауыш мектеп үлгісіне жақындатуы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Көрнекілік қағидасы баланың нақты затты, құбылысты және әрекетті тікелей қабылдауына, бақылауына және тәжірибе арқылы түсінуіне сүйенеді.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">14. Қолжетімділік қағидасы мектеп жасына дейінгі балаларды оқытуда нені талап етеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_14" value="A"> Барлық балаларға бірдей күрделіліктегі оқу тапсырмасын беруді</label>
+                <label class="option"><input type="radio" name="qj_14" value="B"> Оқу мазмұнын бастауыш мектеп пәндерімен толық сәйкестендіруді</label>
+                <label class="option"><input type="radio" name="qj_14" value="C"> Материалдың баланың жасына, тәжірибесіне, қабылдауына және түсіну мүмкіндігіне сай болуын</label>
+                <label class="option"><input type="radio" name="qj_14" value="D"> Балалардың нәтижесін оқу көрсеткіші бойынша салыстыруды</label>
+                <label class="option"><input type="radio" name="qj_14" value="E"> Баланың дербес әрекетін педагог түсіндіруімен алмастыруды</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Қолжетімділік қағидасы материалдың баланың жасына, тәжірибесіне, қабылдауына және түсіну мүмкіндігіне сәйкес берілуін талап етеді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">15. Жүйелілік және бірізділік қағидасы оқыту мазмұнын қалай ұйымдастыруды көздейді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_15" value="A"> Баланың әрекетін бір тапсырма түрімен шектеуді</label>
+                <label class="option"><input type="radio" name="qj_15" value="B"> Оқу мазмұнын баланың қызығушылығынан бөлек жоспарлауды</label>
+                <label class="option"><input type="radio" name="qj_15" value="C"> Балалардың нәтижесін тұрақты салыстырып бағалауды</label>
+                <label class="option"><input type="radio" name="qj_15" value="D"> Ұйымдастырылған іс-әрекетті мектеп сабағы формасына көшіруді</label>
+                <label class="option"><input type="radio" name="qj_15" value="E"> Материалды қарапайымнан күрделіге, белгіліден белгісізге, жақыннан алысқа қарай беруді</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Жүйелілік пен бірізділік материалды қарапайымнан күрделіге, белгіліден белгісізге және жақыннан алысқа қарай ұйымдастыруды білдіреді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">16. Мектепке дейінгі оқытудағы белсенділік қағидасы қай жауапта дұрыс сипатталған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_16" value="A"> Баланың педагог айтқан мазмұнды тыңдап, сол күйінде қайталауы</label>
+                <label class="option"><input type="radio" name="qj_16" value="B"> Баланың сұрақ қоюы, бақылауы, салыстыруы, тәжірибе жасауы және өз әрекеті арқылы меңгеруі</label>
+                <label class="option"><input type="radio" name="qj_16" value="C"> Балалардың бірдей тапсырманы бір уақытта орындауы</label>
+                <label class="option"><input type="radio" name="qj_16" value="D"> Баланың әрекетін педагогтің толық басқаруы</label>
+                <label class="option"><input type="radio" name="qj_16" value="E"> Балалардың оқу нәтижесін салыстырып бағалауы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Белсенділік қағидасы баланың оқу-таным процесіне сұрақ қою, бақылау, салыстыру, тәжірибе және өз әрекеті арқылы қатысуын көрсетеді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">17. Сөздік әдістер мектепке дейінгі оқытуда қандай әрекеттер арқылы іске асады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_17" value="A"> Бақылау, тәжірибе жасау, салыстыру және зерттеу арқылы</label>
+                <label class="option"><input type="radio" name="qj_17" value="B"> Қимыл жаттығулары, қозғалыс ойындары және спорттық әрекеттер арқылы</label>
+                <label class="option"><input type="radio" name="qj_17" value="C"> Мүсіндеу, сурет салу, жапсыру және музыка тыңдау арқылы</label>
+                <label class="option"><input type="radio" name="qj_17" value="D"> Әңгімелеу, түсіндіру, әңгімелесу, сұрақ-жауап және көркем мәтінді оқу арқылы</label>
+                <label class="option"><input type="radio" name="qj_17" value="E"> Өзіне-өзі қызмет ету, кезекшілік және тұрмыстық еңбек арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Сөздік әдістер әңгімелеу, түсіндіру, әңгімелесу, сұрақ-жауап және көркем мәтінді оқу арқылы қолданылады.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">18. Көрнекі әдістердің мектеп жасына дейінгі балалар үшін маңызы қандай?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_18" value="A"> Баланың нақты затты, суретті, құбылысты және әрекетті қабылдауына сүйеніп, түсінікті нақтылауында</label>
+                <label class="option"><input type="radio" name="qj_18" value="B"> Баланың дайын жауапты жаттап, қайта айтуында</label>
+                <label class="option"><input type="radio" name="qj_18" value="C"> Балалардың нәтижесін жазбаша бақылау арқылы бағалауында</label>
+                <label class="option"><input type="radio" name="qj_18" value="D"> Оқу мазмұнын педагогтің ауызша түсіндіруімен шектеуінде</label>
+                <label class="option"><input type="radio" name="qj_18" value="E"> Балаларды оқу деңгейіне қарай тұрақты бөлуінде</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Көрнекі әдістер баланың нақты затты, суретті, құбылысты және әрекетті қабылдауына сүйеніп, түсінікті нақтылауға көмектеседі.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">19. Практикалық әдістер баланың оқу-таным әрекетінде қандай мүмкіндік береді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_19" value="A"> Дайын мәтінді есте сақтап, өзгеріссіз қайталауға</label>
+                <label class="option"><input type="radio" name="qj_19" value="B"> Педагог түсіндіруін тыңдап, жауапты жаттап айтуға</label>
+                <label class="option"><input type="radio" name="qj_19" value="C"> Жаттығу, тәжірибе, құрастыру, еңбек және нақты әрекет арқылы меңгеруге</label>
+                <label class="option"><input type="radio" name="qj_19" value="D"> Балалардың нәтижесімен салыстырылуға</label>
+                <label class="option"><input type="radio" name="qj_19" value="E"> Сабақ кестесін сақтап, тыныш отыруға</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Практикалық әдістер балаға білім мен дағдыны жаттығу, тәжірибе, құрастыру, еңбек және нақты әрекет арқылы меңгеруге мүмкіндік береді.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">20. Ойын әдісінің мектепке дейінгі оқытудағы орны қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_20" value="A"> Ойын оқу міндетінен бөлек бос уақыт әрекеті ретінде қолданылады</label>
+                <label class="option"><input type="radio" name="qj_20" value="B"> Ойын тәртіп сақтаған балаларға марапат ретінде беріледі</label>
+                <label class="option"><input type="radio" name="qj_20" value="C"> Ойын балалардың оқу нәтижесін салыстыру үшін ұйымдастырылады</label>
+                <label class="option"><input type="radio" name="qj_20" value="D"> Ойын баланың дербес таңдауын азайтып, тәртіпті күшейтеді</label>
+                <label class="option"><input type="radio" name="qj_20" value="E"> Ойын баланың қызығушылығын сақтап, оқу міндетін табиғи әрекетпен байланыстырады</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Ойын әдісі оқу міндетін баланың табиғи қызығушылығымен және белсенді әрекетімен байланыстырады.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">21. Дидактикалық ойынның құрылымында қандай екі міндет өзара бірігеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_21" value="A"> Тәртіптік міндет пен бақылау міндеті</label>
+                <label class="option"><input type="radio" name="qj_21" value="B"> Ойын міндеті мен оқу міндеті</label>
+                <label class="option"><input type="radio" name="qj_21" value="C"> Еңбек міндеті мен тұрмыстық міндет</label>
+                <label class="option"><input type="radio" name="qj_21" value="D"> Қимыл міндеті мен спорттық міндет</label>
+                <label class="option"><input type="radio" name="qj_21" value="E"> Бағалау міндеті мен салыстыру міндеті</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Дидактикалық ойынның ерекшелігі — ойын міндеті мен оқу міндетінің бірігуі.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">22. Сюжеттік-рөлдік ойын мектеп жасына дейінгі баланың қандай тәжірибесін кеңейтеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_22" value="A"> Санау, өлшеу, салыстыру және кеңістіктік бағдарлау тәжірибесін</label>
+                <label class="option"><input type="radio" name="qj_22" value="B"> Қимыл үйлесімі, ептілік және төзімділік тәжірибесін</label>
+                <label class="option"><input type="radio" name="qj_22" value="C"> Табиғатты бақылау және өсімдіктерге күтім жасау тәжірибесін</label>
+                <label class="option"><input type="radio" name="qj_22" value="D"> Әлеуметтік рөлдерді, ересектер әрекетін, қарым-қатынас нормаларын және өзара әрекет тәжірибесін</label>
+                <label class="option"><input type="radio" name="qj_22" value="E"> Өзіне-өзі қызмет ету және тұрмыстық еңбек тәжірибесін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Сюжеттік-рөлдік ойын әлеуметтік рөлдерді, ересектер әрекетін, қарым-қатынас нормаларын және өзара әрекет тәжірибесін кеңейтеді.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">23. Қимылды ойындардың мектепке дейінгі жастағы дамытушылық қызметі қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_23" value="A"> Қимыл белсенділігін, ептілік пен жылдамдықты, ережені сақтауды және ұжымдық әрекетті дамыту</label>
+                <label class="option"><input type="radio" name="qj_23" value="B"> Сөздік қорды, дыбыстық мәдениетті және байланыстырып сөйлеуді дамыту</label>
+                <label class="option"><input type="radio" name="qj_23" value="C"> Көркемдік талғамды, музыкалық қабылдауды және бейнелеу дағдысын дамыту</label>
+                <label class="option"><input type="radio" name="qj_23" value="D"> Санау, салыстыру, топтастыру және кеңістікте бағдарлау түсініктерін қалыптастыру</label>
+                <label class="option"><input type="radio" name="qj_23" value="E"> Еңбекке жауапкершілік, ұқыптылық және тұрмыстық дағды қалыптастыру</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Қимылды ойындар қимыл белсенділігін, ептілік пен жылдамдықты, ережені сақтауды және ұжымдық әрекетті дамытады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">24. Заттық-дамытушы орта баланың дамуына қалай ықпал етеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_24" value="A"> Баланың әрекетін педагогтің нұсқауына толық бағындыру арқылы</label>
+                <label class="option"><input type="radio" name="qj_24" value="B"> Материалдарды балалардан алыс сақтап, педагог рұқсатымен беру арқылы</label>
+                <label class="option"><input type="radio" name="qj_24" value="C"> Баланың таңдауын, дербес әрекетін, ойын, танымдық, шығармашылық және қимыл белсенділігін қолдау арқылы</label>
+                <label class="option"><input type="radio" name="qj_24" value="D"> Барлық балаларды бірдей тапсырманы бірдей орындауға бағыттау арқылы</label>
+                <label class="option"><input type="radio" name="qj_24" value="E"> Ортаны ұйымдастырылған іс-әрекет кезінде ғана қолдану арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Заттық-дамытушы орта баланың таңдауына, дербес әрекетіне, ойын, танымдық, шығармашылық және қимыл белсенділігіне жағдай жасайды.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">25. Дамытушы ортаның өзгермелілік сипаты қандай талаппен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_25" value="A"> Материалдарды жыл бойы өзгеріссіз сақтаумен</label>
+                <label class="option"><input type="radio" name="qj_25" value="B"> Ортаны балалар әрекетінен бөлек ұйымдастырумен</label>
+                <label class="option"><input type="radio" name="qj_25" value="C"> Барлық топқа бірдей жабдық пен бірдей тапсырма ұсынумен</label>
+                <label class="option"><input type="radio" name="qj_25" value="D"> Құралдарды педагогтің бақылауымен ғана қолданумен</label>
+                <label class="option"><input type="radio" name="qj_25" value="E"> Балалардың қызығушылығы, тақырып, ойын мазмұны және даму қажеттілігіне қарай ортаны жаңартып отырумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Өзгермелілік орта мазмұнын балалардың қызығушылығы, тақырып, ойын мазмұны және даму қажеттілігіне қарай жаңартып отыруды білдіреді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">26. Педагогикалық қолдау баланың дамуына қандай жолмен әсер етеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_26" value="A"> Баланың жауабын дайын үлгіге сәйкестендіру арқылы</label>
+                <label class="option"><input type="radio" name="qj_26" value="B"> Баланың мүмкіндігін, қызығушылығын және қажеттілігін ескеріп, белсенді әрекетіне жағдай жасау арқылы</label>
+                <label class="option"><input type="radio" name="qj_26" value="C"> Балаларды нәтижесі бойынша тұрақты топтарға бөлу арқылы</label>
+                <label class="option"><input type="radio" name="qj_26" value="D"> Оқу жүктемесін арттырып, тапсырма санын көбейту арқылы</label>
+                <label class="option"><input type="radio" name="qj_26" value="E"> Баланың дербес әрекетін педагог нұсқауымен алмастыру арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Педагогикалық қолдау баланың мүмкіндігін, қызығушылығын және қажеттілігін ескеріп, белсенді әрекетіне жағдай жасауға негізделеді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">27. Отбасымен ынтымақтастықтың мектепке дейінгі педагогикадағы негізгі мақсаты қандай?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_27" value="A"> Баланың оқу нәтижесін басқа балалардың нәтижесімен салыстыру</label>
+                <label class="option"><input type="radio" name="qj_27" value="B"> Ата-ананы педагогикалық құжаттарды жүргізуге міндеттеу</label>
+                <label class="option"><input type="radio" name="qj_27" value="C"> Баланың тәрбиесін толық отбасының жауапкершілігіне беру</label>
+                <label class="option"><input type="radio" name="qj_27" value="D"> Баланың дамуын бірлесіп қолдау, ортақ тәрбиелік талап қалыптастыру және ақпарат алмасу</label>
+                <label class="option"><input type="radio" name="qj_27" value="E"> Үй тапсырмасының көлемін көбейту және бақылау</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Отбасымен ынтымақтастық баланың дамуын бірлесіп қолдау, ортақ тәрбиелік талап қалыптастыру және ақпарат алмасу үшін қажет.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">28. Отбасының тәрбиелік мүмкіндігі қай жауапта дұрыс сипатталған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_28" value="A"> Баланың алғашқы әлеуметтік тәжірибесі, эмоциялық байланысы, мінез-құлық үлгісі және құндылықтары қалыптасатын орта</label>
+                <label class="option"><input type="radio" name="qj_28" value="B"> Баланың оқу нәтижесін салыстыратын ресми бағалау кеңістігі</label>
+                <label class="option"><input type="radio" name="qj_28" value="C"> Педагогикалық процестен бөлек, тәрбиеге қатысы жоқ тұрмыстық орта</label>
+                <label class="option"><input type="radio" name="qj_28" value="D"> Мектеп пәндерін алдын ала меңгертетін оқу орны</label>
+                <label class="option"><input type="radio" name="qj_28" value="E"> Баланың дербес әрекетін шектеп, тәртіпке бағындыратын бақылау жүйесі</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Отбасы баланың алғашқы әлеуметтік тәжірибесі, эмоциялық байланысы, мінез-құлық үлгісі және құндылықтары қалыптасатын негізгі орта болып табылады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">29. Мектепке дейінгі ұйым мен отбасының өзара байланысында педагогтің кеңес беру қызметі неге бағытталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_29" value="A"> Баланың нәтижесін ата-аналар арасында салыстыруға</label>
+                <label class="option"><input type="radio" name="qj_29" value="B"> Ата-ананы күнделікті жазбаша тапсырма беруге міндеттеуге</label>
+                <label class="option"><input type="radio" name="qj_29" value="C"> Баланың жас ерекшелігін түсіндіру, тәрбиелік қиындықты талдау және отбасындағы қолдауды күшейтуге</label>
+                <label class="option"><input type="radio" name="qj_29" value="D"> Отбасымен жұмысты ресми есеппен шектеуге</label>
+                <label class="option"><input type="radio" name="qj_29" value="E"> Баланы бастауыш пәндерді ерте меңгеруге бағыттауға</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Кеңес беру баланың жас ерекшелігін түсіндіруге, тәрбиелік қиындықты талдауға және отбасындағы қолдауды күшейтуге бағытталады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">30. Мектепке дайындық ұғымы қай жауапта дұрыс берілген?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_30" value="A"> Бастауыш сынып пәндерін толық меңгеру деңгейі</label>
+                <label class="option"><input type="radio" name="qj_30" value="B"> Жазбаша тапсырманы орындау жылдамдығы мен бақылау нәтижесі</label>
+                <label class="option"><input type="radio" name="qj_30" value="C"> Сабақ кестесіне бағыну және тыныш отыру қабілеті</label>
+                <label class="option"><input type="radio" name="qj_30" value="D"> Баланың оқу нәтижесін басқа балалармен салыстыру көрсеткіші</label>
+                <label class="option"><input type="radio" name="qj_30" value="E"> Баланың физикалық, психологиялық, әлеуметтік, эмоционалдық және танымдық тұрғыдан мектеп өміріне бейімделуге даярлығы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Мектепке дайындық баланың физикалық, психологиялық, әлеуметтік, эмоционалдық және танымдық тұрғыдан мектеп өміріне бейімделуге даярлығын білдіреді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">31. Сабақтастық мектепке дейінгі ұйым мен бастауыш мектеп арасында қалай көрінеді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_31" value="A"> Мектепке дейінгі ұйымда бастауыш мектеп пәндерін толық оқыту арқылы</label>
+                <label class="option"><input type="radio" name="qj_31" value="B"> Баланың дамуын, дағдыларын, әрекет тәжірибесін және оқу мотивациясын бірізді жалғастыру арқылы</label>
+                <label class="option"><input type="radio" name="qj_31" value="C"> Ойын әрекетін толық тоқтатып, сабақ формасына көшу арқылы</label>
+                <label class="option"><input type="radio" name="qj_31" value="D"> Балаларды пәндік нәтиже бойынша іріктеу арқылы</label>
+                <label class="option"><input type="radio" name="qj_31" value="E"> Мектепалды топта емтихан жүйесін енгізу арқылы</label>
+              </div>
+              
+              <div class="explanation">Дұрыс жауап: B. Сабақтастық баланың дамуын, дағдыларын, әрекет тәжірибесін және оқу мотивациясын бірізді жалғастыру арқылы көрінеді.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">32. Мектепалды кезеңде оқу мотивациясын қалыптастыру қандай мазмұнмен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_32" value="A"> Баланы жазбаша бақылау жұмыстарына жиі қатыстырумен</label>
+                <label class="option"><input type="radio" name="qj_32" value="B"> Балалардың нәтижесін салыстырып, жарыс түрінде бағалаумен</label>
+                <label class="option"><input type="radio" name="qj_32" value="C"> Бастауыш мектеп пәндерін толық меңгертумен</label>
+                <label class="option"><input type="radio" name="qj_32" value="D"> Білуге қызығушылық, тапсырманы түсіну, әрекетке жауапкершілік және нәтижеге ұмтылу қалыптастырумен</label>
+                <label class="option"><input type="radio" name="qj_32" value="E"> Ойын әрекетін оқу әрекетінен толық ажыратумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Оқу мотивациясы білуге қызығушылық, тапсырманы түсіну, жауапкершілік және нәтижеге ұмтылу арқылы қалыптасады.</div>
+            </div>
+                        <div class="question" data-answer="A">
+              <div class="q-title">33. Мектепке дайындықтағы әлеуметтік дайындық қандай мазмұнмен сипатталады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_33" value="A"> Құрдастармен және ересектермен қарым-қатынас жасау, ережені сақтау, бірлескен әрекетке қатысу және жауапкершілік таныту</label>
+                <label class="option"><input type="radio" name="qj_33" value="B"> Жазбаша тапсырманы орындау, әріптерді тану және бақылау жұмысына дайын болу</label>
+                <label class="option"><input type="radio" name="qj_33" value="C"> Бастауыш мектеп пәндерінің мазмұнын алдын ала толық меңгеру</label>
+                <label class="option"><input type="radio" name="qj_33" value="D"> Сабақ кестесін есте сақтау және тыныш отыру дағдысын көрсету</label>
+                <label class="option"><input type="radio" name="qj_33" value="E"> Баланың оқу нәтижесін басқа балалармен салыстыруға дайын болуы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Әлеуметтік дайындық қарым-қатынас жасау, ережені сақтау, бірлескен әрекетке қатысу және жауапкершілік таныту арқылы сипатталады.</div>
+            </div>
+
+            <div class="question" data-answer="C">
+              <div class="q-title">34. Эмоционалдық дайындық мектепке бару алдында қандай сапалармен байланысты?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_34" value="A"> Пәндік білімді меңгеру, жазу және оқу жылдамдығын арттырумен</label>
+                <label class="option"><input type="radio" name="qj_34" value="B"> Балалардың нәтижесін тұрақты салыстыру және бағалаумен</label>
+                <label class="option"><input type="radio" name="qj_34" value="C"> Өз эмоциясын тану, реттеу, жаңа ортаға бейімделу және сенімді қарым-қатынас орнатумен</label>
+                <label class="option"><input type="radio" name="qj_34" value="D"> Бастауыш пәндерін алдын ала толық орындаумен</label>
+                <label class="option"><input type="radio" name="qj_34" value="E"> Сабақта ұзақ уақыт қозғалыссыз отырумен</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Эмоционалдық дайындық өз эмоциясын тану, реттеу, жаңа ортаға бейімделу және сенімді қарым-қатынас орнатумен байланысты.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">35. Танымдық дайындық мектепалды кезеңде қандай дағдылар арқылы байқалады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_35" value="A"> Топтағы балалармен салыстырылған оқу көрсеткіші арқылы</label>
+                <label class="option"><input type="radio" name="qj_35" value="B"> Сабақта тыныш отыру және дайын жауапты қайталау арқылы</label>
+                <label class="option"><input type="radio" name="qj_35" value="C"> Жазбаша бақылау тапсырмаларын орындау жиілігі арқылы</label>
+                <label class="option"><input type="radio" name="qj_35" value="D"> Бастауыш мектеп пәндерін алдын ала меңгеру арқылы</label>
+                <label class="option"><input type="radio" name="qj_35" value="E"> Қызығушылық, зейін, есте сақтау, ойлау, сұрақ қою, салыстыру және қорытындылау арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Танымдық дайындық қызығушылық, зейін, есте сақтау, ойлау, сұрақ қою, салыстыру және қорытындылау дағдыларымен көрінеді.</div>
+            </div>
+
+            <div class="question" data-answer="B">
+              <div class="q-title">36. Педагогикалық диагностика мектепке дейінгі ұйымда қандай мақсатта қолданылады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_36" value="A"> Балаларды оқу үлгерімі бойынша тұрақты топтарға бөлу үшін</label>
+                <label class="option"><input type="radio" name="qj_36" value="B"> Баланың даму деңгейін, қызығушылығын, қажеттілігін анықтап, педагогикалық жұмысты жоспарлау үшін</label>
+                <label class="option"><input type="radio" name="qj_36" value="C"> Оқу жүктемесін көбейту және тапсырма санын арттыру үшін</label>
+                <label class="option"><input type="radio" name="qj_36" value="D"> Балалардың нәтижесін рейтингке шығару үшін</label>
+                <label class="option"><input type="radio" name="qj_36" value="E"> Сабақ формасын бастауыш мектепке жақындату үшін</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: B. Диагностика баланың даму деңгейін, қызығушылығын және қажеттілігін анықтап, келесі педагогикалық жұмысты жоспарлауға көмектеседі.</div>
+            </div>
+
+            <div class="question" data-answer="D">
+              <div class="q-title">37. Педагогикалық бақылау баланың дамуын бағалауда қандай тәсілге негізделуі тиіс?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_37" value="A"> Балалардың нәтижесін бір-бірімен салыстыруға</label>
+                <label class="option"><input type="radio" name="qj_37" value="B"> Дайын жауапты қайталау деңгейін анықтауға</label>
+                <label class="option"><input type="radio" name="qj_37" value="C"> Балаларды тұрақты деңгейлік топтарға бөлуге</label>
+                <label class="option"><input type="radio" name="qj_37" value="D"> Баланың табиғи әрекетіндегі даму динамикасын, қарым-қатынасын және қызығушылығын байқауға</label>
+                <label class="option"><input type="radio" name="qj_37" value="E"> Оқу жүктемесін арттыру қажеттігін дәлелдеуге</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: D. Педагогикалық бақылау баланың табиғи әрекеті барысында даму динамикасын, қарым-қатынасын және қызығушылығын байқауға негізделеді.</div>
+            </div>
+
+            <div class="question" data-answer="A">
+              <div class="q-title">38. Баланың дербестігін қолдау педагогикалық процесте қалай жүзеге асады?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_38" value="A"> Таңдау жасауға, бастама көтеруге, шешім қабылдауға және өз әрекетінің нәтижесін көруге мүмкіндік беру арқылы</label>
+                <label class="option"><input type="radio" name="qj_38" value="B"> Баланың әрекетін дайын нұсқаулықпен толық шектеу арқылы</label>
+                <label class="option"><input type="radio" name="qj_38" value="C"> Баланың жауабын педагог үлгісіне сәйкестендіру арқылы</label>
+                <label class="option"><input type="radio" name="qj_38" value="D"> Барлық балаларға бірдей тапсырманы бірдей уақытта орындату арқылы</label>
+                <label class="option"><input type="radio" name="qj_38" value="E"> Дербес ойынды қысқартып, түсіндіру уақытын көбейту арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: A. Дербестік балаға таңдау жасауға, бастама көтеруге, шешім қабылдауға және әрекет нәтижесін көруге мүмкіндік берілгенде қалыптасады.</div>
+            </div>
+                        <div class="question" data-answer="C">
+              <div class="q-title">39. Балалар ұжымын қалыптастыру мектепке дейінгі педагогикада қандай әрекеттер арқылы жүреді?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_39" value="A"> Балаларды оқу нәтижесі бойынша тұрақты салыстыру арқылы</label>
+                <label class="option"><input type="radio" name="qj_39" value="B"> Балалардың дербес таңдауын шектеу және ортақ тапсырманы міндеттеу арқылы</label>
+                <label class="option"><input type="radio" name="qj_39" value="C"> Бірлескен ойын, ортақ әрекет, қарым-қатынас, өзара көмек және топтық жауапкершілік арқылы</label>
+                <label class="option"><input type="radio" name="qj_39" value="D"> Сабақ формасын бастауыш мектеп үлгісіне көшіру арқылы</label>
+                <label class="option"><input type="radio" name="qj_39" value="E"> Балаларды дайын жауапты қайталауға бағыттау арқылы</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: C. Балалар ұжымы бірлескен ойын, ортақ әрекет, қарым-қатынас, өзара көмек және топтық жауапкершілік арқылы қалыптасады.</div>
+            </div>
+
+            <div class="question" data-answer="E">
+              <div class="q-title">40. Жиенбаева және авторлар еңбегі бойынша мектепке дейінгі педагогика мазмұнының жалпы бағыты қай жауапта дұрыс жинақталған?</div>
+              <div class="options">
+                <label class="option"><input type="radio" name="qj_40" value="A"> Балаларды бастауыш мектеп пәндерін толық меңгеруге және жазбаша бақылауға дайындау</label>
+                <label class="option"><input type="radio" name="qj_40" value="B"> Оқу нәтижесін салыстырып, балаларды деңгейлік топтарға бөлу</label>
+                <label class="option"><input type="radio" name="qj_40" value="C"> Сабақ кестесін қатаңдатып, ойын әрекетін қосымша жұмысқа айналдыру</label>
+                <label class="option"><input type="radio" name="qj_40" value="D"> Баланың әрекетін педагог нұсқауымен шектеп, дайын жауапты меңгерту</label>
+                <label class="option"><input type="radio" name="qj_40" value="E"> Баланың жан-жақты дамуын тәрбие, оқыту, ойын, орта, отбасы және сабақтастық арқылы қамтамасыз ету</label>
+              </div>
+              <div class="explanation">Дұрыс жауап: E. Кітап мазмұны баланың жан-жақты дамуын тәрбие, оқыту, ойын, орта, отбасы және сабақтастық арқылы қамтамасыз етуге бағытталады.</div>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn" onclick="checkTest('testZhienbaeva')">Жауаптарды тексеру</button>
+              <button class="btn secondary" onclick="resetTest('testZhienbaeva')">Қайта тапсыру</button>
+            </div>
+            <div class="score" id="score-testZhienbaeva"></div>
+          </div>
+        </article>
+      </section>
+                  <footer class="section">
+        <div class="card">
+          <h3>Қорытынды</h3>
+          <p>
+            Бұл сайт мектепке дейінгі педагогика бойынша үш негізгі оқу құралындағы теориялық
+            материалдарды жүйелі қайталауға арналған. Материалдар баланың дамуы, тәрбие
+            бағыттары, оқыту, ойын, заттық-дамытушы орта, отбасы және мектепке дайындық
+            мәселелерін қамтиды.
+          </p>
+
+          <div class="copyright">
+            © Назерке. Барлық құқық қорғалған. Материалды рұқсатсыз көшіруге, сатуға,
+            қайта таратуға немесе коммерциялық мақсатта қолдануға болмайды.
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function checkTest(testId) {
+      const test = document.querySelector('[data-test="' + testId + '"]');
+      const scoreBox = document.getElementById("score-" + testId);
+
+      if (!test || !scoreBox) return;
+
+      const questions = test.querySelectorAll(".question");
+      let correct = 0;
+
+      questions.forEach(question => {
+        const answer = question.dataset.answer;
+        const selected = question.querySelector('input[type="radio"]:checked');
+
+        question.classList.remove("correct", "wrong");
+        question.classList.add("checked");
+
+        if (selected && selected.value === answer) {
+          correct++;
+          question.classList.add("correct");
+        } else {
+          question.classList.add("wrong");
+        }
+      });
+
+      const total = questions.length;
+      const percent = total ? Math.round((correct / total) * 100) : 0;
+
+      let level = "";
+      if (percent >= 90) {
+        level = "Өте жоғары нәтиже";
+      } else if (percent >= 75) {
+        level = "Жақсы нәтиже";
+      } else if (percent >= 50) {
+        level = "Орташа нәтиже";
+      } else {
+        level = "Қайталау қажет";
+      }
+
+      scoreBox.style.display = "block";
+      scoreBox.textContent = "Нәтиже: " + correct + "/" + total + " дұрыс жауап · " + percent + "% · " + level;
+
+      scoreBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function resetTest(testId) {
+      const test = document.querySelector('[data-test="' + testId + '"]');
+      const scoreBox = document.getElementById("score-" + testId);
+
+      if (!test) return;
+
+      const questions = test.querySelectorAll(".question");
+
+      questions.forEach(question => {
+        question.classList.remove("correct", "wrong", "checked");
+
+        const inputs = question.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => {
+          input.checked = false;
+        });
+      });
+
+      if (scoreBox) {
+        scoreBox.style.display = "none";
+        scoreBox.textContent = "";
+      }
+
+      test.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  </script>
+</body>
+</html>
+            
+            
+            
